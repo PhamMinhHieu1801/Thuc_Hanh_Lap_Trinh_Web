@@ -11,6 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        $this->call(UserTableSeeder::class);
+        $this->call(HotelTableSeeder::class);
+        $this->call(RoomTableSeeder::class);
+        $this->call(BookingInforTableSeeder::class);
+        $this->call(BookingHistoryTableSeeder::class);
+        $this->call(FeedbackTableSeeder::class);
+       //neu bị lỗi ko tạo dc seeder : chạy lệnh composer dump-autoload
     }
 }
