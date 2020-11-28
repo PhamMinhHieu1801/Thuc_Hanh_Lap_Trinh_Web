@@ -1,1 +1,24 @@
-//
+body {
+    background-color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    line-height: 15px;
+    color: #73726C;
+}
+
+.header {
+    .navbar-default {
+        margin-bottom: 0;
+    }
+}
+
+.banner {
+    position: relative;
+    .wrap-info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+    }
+}
