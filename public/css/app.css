@@ -1,0 +1,105 @@
+body {
+  background-color: #fff;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  color: #73726C;
+}
+
+.header .navbar-default {
+  margin-bottom: 0;
+}
+
+.banner {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.banner .wrap-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+
+.reservation-information {
+  margin-bottom: 50px;
+}
+
+.reservation-information .reserve-info h3 {
+  margin-top: 0;
+}
+
+.services .caption {
+  background-color: #b9b2a0;
+  color: #46433b;
+  padding: 1.5em;
+}
+
+.services .caption a {
+  color: #585650;
+  font-size: 1.25em;
+}
+
+.services .caption a :hover {
+  color: #fff;
+}
+
+footer {
+  margin-top: 50px;
+  background-color: #585650;
+  color: #AEAEAC;
+}
+
+footer .spacer {
+  padding: 3em 0;
+}
+
+footer h4 {
+  color: #DCDCDC;
+}
+
+footer .subscribe .form-control {
+  height: 30px;
+  padding: 4px 12px;
+  border: none;
+}
+
+footer .subscribe .input-group {
+  margin-bottom: 1em;
+}
+
+footer .subscribe .social a {
+  font-size: 1.5em;
+  margin-right: 0.25em;
+}
+
+footer .subscribe .btn {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #fff;
+}
+
+footer a,
+footer p {
+  line-height: 1.5em;
+  font-size: 0.85em;
+  color: #AEAEAC;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+.copyright {
+  background-color: #252423;
+  padding: 0.6em 0;
+  font-size: 0.85em;
+  color: #7F7F7F;
+}
+
+.copyright a {
+  color: #AEAEAC;
+}
+
