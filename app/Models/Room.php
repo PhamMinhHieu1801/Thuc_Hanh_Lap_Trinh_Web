@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
@@ -14,6 +15,7 @@ class Room extends Model
      *
      * @var array
      */
+    protected $table = 'rooms';
     protected $fillable = [
         'id', 'hotel_id', 'name', 'price', 'description', 'status', 'type', 'bath', 'bed', 'tv', 'wardrobe'
     ];
