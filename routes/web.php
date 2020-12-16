@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin.index');
 });
+
+Route::get('/contact', function(){
+    return view('layout/home/contact');
+})->name('contact');
