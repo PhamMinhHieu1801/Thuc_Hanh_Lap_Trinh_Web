@@ -55102,3 +55102,13 @@ html, body {
 #target {
   width: 345px;
 }
+
+.btn_default {
+  background: #bfa145 !important;
+  box-shadow: none !important;
+  color: #fff;
+}
+
+.contact_form {
+  margin-right: 150px;
+}

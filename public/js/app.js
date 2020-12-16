@@ -37547,8 +37547,8 @@ function create_address_infos(address) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\hotel_search_suggestion\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\hotel_search_suggestion\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\Thuc_Hanh_Lap_Trinh_Web\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\Thuc_Hanh_Lap_Trinh_Web\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
