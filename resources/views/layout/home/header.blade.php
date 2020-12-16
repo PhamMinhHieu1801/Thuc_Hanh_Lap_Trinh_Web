@@ -19,7 +19,7 @@
           <li><a href="rooms-tariff.php" class="text">Rooms & Tariff</a></li>
           <li><a href="introduction.php" class="text">Introduction</a></li>
           <li><a href="gallery.php" class="text">Gallery</a></li>
-          <li><a href="contact.php" class="text">Contact</a></li>
+          <li><a href="{{ route('contact') }}" class="text">Contact</a></li>
         </ul>
       </div><!-- Wnavbar-collapse -->
     </div><!-- container-fluid -->
