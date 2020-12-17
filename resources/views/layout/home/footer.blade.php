@@ -14,17 +14,12 @@
                         <li><a href="introduction.php">Introduction</a></li>
                         <li><a href="gallery.php">Gallery</a></li>
                         <li><a href="tour.php">Tour Packages</a></li>
-                        <li><a href="contact.php">Contact</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-4 subscribe">
                     <h4>Subscription</h4>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Enter email id here">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">Get Notify</button>
-                        </span>
-                    </div>
+
                     <div class="social">
                         <a href="#"><i class="fa fa-facebook-square" data-toggle="tooltip" data-placement="top" data-original-title="facebook"></i></a>
                         <a href="#"><i class="fa fa-instagram" data-toggle="tooltip" data-placement="top" data-original-title="instragram"></i></a>

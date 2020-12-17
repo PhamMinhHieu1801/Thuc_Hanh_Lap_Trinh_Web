@@ -1,6 +1,6 @@
 <section class="banner">
     <div class="banner w-100">
-        <img src="{{ URL::asset('storage/Image/banner.jpg') }}" class="img-responsive" alt="slide">
+        <img src="{{ URL::asset('storage/Image/banner.jpg') }}" class="img-responsive w-100" alt="slide" >
         <div class="welcome-message">
             <div class="wrap-info">
                 <div class="information text-center">
