@@ -24,3 +24,12 @@ Route::get('/admin', function () {
 Route::get('/contact', function(){
     return view('layout/home/contact');
 })->name('contact');
+// list room cua 1 khach san
+Route::get('/hotel/list_room', function(){
+    return view('layout/home/list_room');
+})->name('list_room');
+
+// xem chi tiet room
+Route::get('/hotel/room', function(){
+    return view('layout/home/list_room');
+})->name('room');
