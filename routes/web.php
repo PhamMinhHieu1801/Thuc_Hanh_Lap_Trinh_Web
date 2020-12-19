@@ -34,3 +34,7 @@ Route::get('/hotel/room', function(){
     return view('layout/home/list_room');
 })->name('room');
 
+// list hotel
+Route::get('/list_hotel', function(){
+    return view('layout/home/list_hotel');
+})->name('list_hotel');
