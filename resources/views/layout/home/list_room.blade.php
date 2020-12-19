@@ -5,16 +5,18 @@
 @include("layout.home.header")
 
 <div class="container">
+<div class="d-flex justify-content-center">
+<h2 class="my-3"> Tên Hotel</h2>
 
-<h2>Tên Hotel</h2>
+</div>
 
 
 <!-- form -->
 
 <div class="row d-flex justify-content-around">
-    <div class="col-sm-5 wowload fadeInUp card px-3">
+    <div class="col-sm-5  card px-0" style="width:100%">
         <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/room/8.jpg') }}" class="card-img-top" style="width:100%" >
+            <img src="{{ URL::asset('storage/Image/room/8.jpg') }}" class="card-img-top img-fluid" style="width:100%" >
             <div class="info card-body">
                 <h3 class="card-title">ABC</h3>
                 <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
@@ -23,7 +25,7 @@
         </div>
     </div>
 
-    <div class="col-sm-5 wowload fadeInUp card">
+    <div class="col-sm-5 wowload fadeInUp card px-0">
         <div class="rooms">
             <img src="{{ URL::asset('storage/Image/room/9.jpg') }}" class="card-img-top">
             <div class="info card-body">
@@ -34,7 +36,7 @@
         </div>
     </div>
 
-    <div class="col-sm-5 wowload fadeInUp card">
+    <div class="col-sm-5 card px-0">
         <div class="rooms">
             <img src="{{ URL::asset('storage/Image/room/10.jpg') }}" class="card-img-top">
             <div class="info card-body">
@@ -45,7 +47,7 @@
         </div>
     </div>
 
-    <div class="col-sm-5 wowload fadeInUp card">
+    <div class="col-sm-5 card px-0">
         <div class="rooms">
             <img src="{{ URL::asset('storage/Image/room/11.jpg') }}" class="card-img-top">
             <div class="info card-body">
@@ -56,7 +58,7 @@
         </div>
     </div>
 
-    <div class="col-sm-5 wowload fadeInUp card">
+    <div class="col-sm-5 card px-0">
         <div class="rooms">
             <img src="{{ URL::asset('storage/Image/room/8.jpg') }}" class="card-img-top">
             <div class="info card-body">
@@ -67,7 +69,7 @@
         </div>
     </div>
 
-    <div class="col-sm-5 wowload fadeInUp card">
+    <div class="col-sm-5  card px-0">
         <div class="rooms">
             <img src="{{ URL::asset('storage/Image/room/9.jpg') }}" class="card-img-top">
             <div class="info card-body">
