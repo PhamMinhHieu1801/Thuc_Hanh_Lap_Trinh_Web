@@ -9,17 +9,17 @@
 <h2 class="my-3"> List Hotel</h2>
 
 </div>
-
-
 <!-- form -->
 
 <div class="row d-flex justify-content-around">
     <div class="col-sm-5 card px-0" style="width:100%">
         <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/hotel/hotel1.jpg') }}" class="card-img-top img-fluid" style="width:100%" >
+            <img src="{{ URL::asset('storage/Image/hotel/hotel1.jpg') }}" class="card-img-top" style="width: 473px; height: 360px;" style="width:100%" >
             <div class="info card-body">
                 <h3 class="card-title">ABC</h3>
-                <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
+                <p class="card-text"> 
+                Hiển thị mô tả description của hotel nhé 
+                </p>
                 <a href="{{ route('list_room') }}" class=" btn btn_default ">Check Details</a>
             </div>
         </div>
@@ -27,7 +27,7 @@
 
     <div class="col-sm-5 wowload fadeInUp card px-0">
         <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/hotel/hotel2.jpg') }}" class="card-img-top">
+            <img src="{{ URL::asset('storage/Image/hotel/hotel2.jpg') }}"  style="width: 473px; height: 360px;"  class="card-img-top">
             <div class="info card-body">
                 <h3 class="card-title">Linh Chi</h3>
                 <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
@@ -38,7 +38,7 @@
 
     <div class="col-sm-5 card px-0">
         <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/hotel/hotel3.jpg') }}" class="card-img-top">
+            <img src="{{ URL::asset('storage/Image/hotel/hotel3.jpg') }}" style="width: 473px; height: 360px;"  class="card-img-top">
             <div class="info card-body">
                 <h3 class="card-title">Thanh Tu</h3>
                 <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
@@ -49,7 +49,7 @@
 
     <div class="col-sm-5 card px-0">
         <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/hotel/hotel4.jpg') }}" class="card-img-top">
+            <img src="{{ URL::asset('storage/Image/hotel/hotel4.jpg') }}"  style="width: 473px; height: 360px;"  class="card-img-top">
             <div class="info card-body">
                 <h3 class="card-title">Yen Vy</h3>
                 <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
@@ -60,7 +60,7 @@
 
     <div class="col-sm-5 card px-0">
         <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/hotel/hotel5.jpg') }}" class="card-img-top">
+            <img src="{{ URL::asset('storage/Image/hotel/hotel5.jpg') }}" style="width: 473px; height: 360px;"  class="card-img-top">
             <div class="info card-body">
                 <h3 class="card-title">A</h3>
                 <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
@@ -71,7 +71,7 @@
 
     <div class="col-sm-5  card px-0">
         <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/hotel/hotel6.jpg') }}" class="card-img-top">
+            <img src="{{ URL::asset('storage/Image/hotel/hotel6.jpg') }}" style="width: 473px; height: 360px;"  class="card-img-top">
             <div class="info card-body">
                 <h3 class="card-title">Mama</h3>
                 <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
