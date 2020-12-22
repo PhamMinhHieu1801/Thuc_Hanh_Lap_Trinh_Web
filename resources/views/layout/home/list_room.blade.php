@@ -53,7 +53,7 @@
             <div class="info card-body">
                 <h3 class="card-title">ABC</h3>
                 <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
-                <a href="{{ route('room') }}" class=" btn btn_default ">Check Details</a>
+                <a href="{{ route('room_detail') }}" class=" btn btn_default ">Check Details</a>
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@
             <div class="info card-body">
                 <h3 class="card-title">Linh Chi</h3>
                 <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
-                <a href="{{ route('room') }}" class=" btn btn_default ">Check Details</a>
+                <a href="{{ route('room_detail') }}" class=" btn btn_default ">Check Details</a>
             </div>
         </div>
     </div>
@@ -75,7 +75,7 @@
             <div class="info card-body">
                 <h3 class="card-title">Thanh Tu</h3>
                 <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
-                <a href="{{ route('room') }}" class=" btn btn_default ">Check Details</a>
+                <a href="{{ route('room_detail') }}" class=" btn btn_default ">Check Details</a>
             </div>
         </div>
     </div>
@@ -86,7 +86,7 @@
             <div class="info card-body">
                 <h3 class="card-title">Yen Vy</h3>
                 <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
-                <a href="{{ route('room') }}" class=" btn btn_default ">Check Details</a>
+                <a href="{{ route('room_detail') }}" class=" btn btn_default ">Check Details</a>
             </div>
         </div>
     </div>
@@ -97,7 +97,7 @@
             <div class="info card-body">
                 <h3 class="card-title">A</h3>
                 <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
-                <a href="{{ route('room') }}" class=" btn btn_default ">Check Details</a>
+                <a href="{{ route('room_detail') }}" class=" btn btn_default ">Check Details</a>
             </div>
         </div>
     </div>
@@ -108,7 +108,7 @@
             <div class="info card-body">
                 <h3 class="card-title">Mama</h3>
                 <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
-                <a href="{{ route('room') }}" class=" btn btn_default ">Check Details</a>
+                <a href="{{ route('room_detail') }}" class=" btn btn_default ">Check Details</a>
             </div>
         </div>
     </div>
