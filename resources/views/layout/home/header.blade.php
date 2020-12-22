@@ -23,7 +23,7 @@
                     <a class="nav-link" href="{{ route('contact') }}">CONTACT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">LOGIN/REGISTER</a>
+                    <a class="nav-link" href="{{ route('login') }}">LOGIN/REGISTER</a>
                 </li>
             </ul>
         </div>
