@@ -24,6 +24,7 @@ Route::get('/admin', function () {
 Route::get('/contact', function(){
     return view('layout/home/contact');
 })->name('contact');
+
 // list room cua 1 khach san
 Route::get('/hotel/list_room', function(){
     return view('layout/home/list_room');
@@ -43,12 +44,9 @@ Route::get('/hotel/room', function(){
 
 Route::get('/list_hotel', 'HotelController@index')->name('list_hotel');
 
-Route::get('/list_hotel', function(){
-    return view('layout/home/list_hotel');
-})->name('list_hotel');
-
 //Room deatil
-Route::get('/hotel/room_detail', function(){
-    return view('layout/home/room_detail');
-})->name('room_detail');
+// Route::get('/hotel/room_detail', function(){
+//     return view('layout/home/room_detail');
+// })->name('room_detail');
 
+Route::get('/hotel/room_detail', 'HotelController@showRoom')->name('room_detail');

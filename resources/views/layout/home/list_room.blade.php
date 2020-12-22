@@ -5,7 +5,7 @@
 @include("layout.home.header")
 
 <div class="container">
-  
+
 <div class="d-flex row my-3 pb-5">
     <div class="hotel-image col-8 d-flex flex-column align-items-sm-center">
         <h2 class="">  Hotel 's name</h2>
@@ -21,12 +21,12 @@
                 <th>Local: Thai Binh</th>
             </tr>
                 <tr> <th>Wifi: Yes</th></tr>
-               
-            <tr>  <th>Car-park: Yes</th></tr>   
-            <tr> <th>Breakfast: Yes</th></tr>   
-            <tr>  <th>Ratting: Yes</th></tr>  
+
+            <tr>  <th>Car-park: Yes</th></tr>
+            <tr> <th>Breakfast: Yes</th></tr>
+            <tr>  <th>Ratting: Yes</th></tr>
             </tr>
-           
+
         </table>
     </div>
 </div>
