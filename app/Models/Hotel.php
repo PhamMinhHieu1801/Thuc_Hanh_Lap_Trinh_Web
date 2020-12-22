@@ -15,6 +15,7 @@ class Hotel extends Model
      *
      * @var array
      */
+    protected $table = 'hotels';
     protected $fillable = [
         'id', 'name', 'local', 'description', 'rating', 'breakfast', 'wifi', 'car_park'
     ];

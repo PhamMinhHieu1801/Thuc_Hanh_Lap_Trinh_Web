@@ -35,6 +35,9 @@ Route::get('/hotel/room', function(){
 })->name('room');
 
 // list hotel
-Route::get('/list_hotel', function(){
-    return view('layout/home/list_hotel');
-})->name('list_hotel');
+// Route::get('/list_hotel', function(){
+//     return view('layout/home/list_hotel');
+// })->name('list_hotel');
+
+
+Route::get('/list_hotel', 'HotelController@index')->name('list_hotel');

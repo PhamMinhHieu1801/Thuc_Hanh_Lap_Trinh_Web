@@ -1,5 +1,4 @@
 <section class="header">
-
   <nav class="navbar navbar-expand-md navbar-light">
     <div class="container-fluid d-flex flex-xl-nowrap flex-md-wrap">
         <div class="col-xl-4 col-md-12 col-6 d-md-flex justify-content-md-center justify-content-center">

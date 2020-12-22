@@ -12,20 +12,22 @@
 <!-- form -->
 
 <div class="row d-flex justify-content-around">
+
+    @foreach($hotels as $hotel)
     <div class="col-sm-5 card px-0" style="width:100%">
         <div class="rooms">
             <img src="{{ URL::asset('storage/Image/hotel/hotel1.jpg') }}" class="card-img-top" style="width: 473px; height: 360px;" style="width:100%" >
             <div class="info card-body">
-                <h3 class="card-title">ABC</h3>
-                <p class="card-text"> 
-                Hiển thị mô tả description của hotel nhé 
+                <h3 class="card-title">{{ $hotel->name }}</h3>
+                <p class="card-text hotel-descript">
+                {{ $hotel->description}}
                 </p>
                 <a href="{{ route('list_room') }}" class=" btn btn_default ">Check Details</a>
             </div>
         </div>
     </div>
-
-    <div class="col-sm-5 wowload fadeInUp card px-0">
+    @endforeach
+    {{-- <div class="col-sm-5 wowload fadeInUp card px-0">
         <div class="rooms">
             <img src="{{ URL::asset('storage/Image/hotel/hotel2.jpg') }}"  style="width: 473px; height: 360px;"  class="card-img-top">
             <div class="info card-body">
@@ -78,7 +80,7 @@
                 <a href="{{ route('list_room') }}" class=" btn btn_default ">Check Details</a>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 <!--
                      <div class="text-center">
