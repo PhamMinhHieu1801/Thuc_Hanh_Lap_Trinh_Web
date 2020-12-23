@@ -39,8 +39,6 @@ Route::get('/search-room-detail/{id}', 'HotelController@searchRoomDetail')->name
 
 //Route::get('/hotel/room_detail', 'HotelController@showRoom')->name('room_detail');
 
-Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Login

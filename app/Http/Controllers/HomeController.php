@@ -33,14 +33,6 @@ class HomeController extends Controller
 
     public function postLogin(Request $request)
     {
-        $arr = [
-            'email' => $request->email, 
-            'password' => $request->password
-        ];
-        if (Auth::attempt($arr)) {
-            # code...
-        } else {
-            # code...
-        }
+
     }
 }

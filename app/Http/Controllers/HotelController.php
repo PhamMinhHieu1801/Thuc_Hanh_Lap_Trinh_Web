@@ -12,10 +12,10 @@ class HotelController extends Controller
 
     public function index () {
         $hotels = Hotel::all();
-        return view('layout.home.list_hotel', compact('hotels'));
+        $list_hotel = Hotel::paginate(6);
+        return view('layout.home.list_hotel', compact('hotels'))->with('hotels',$list_hotel);
     }
     //minh quang
-
     // public function showRoom() {
     //     // $rooms = Room::all();
     //     // return view('layout.home.list_room', compact('rooms'));
@@ -37,5 +37,8 @@ class HotelController extends Controller
         $rooms = $hotelDetail->rooms()
             ->where('name', 'like', '%' . $keyword . '%');
         return view('layout.home.list_room', compact('hotelDetail', 'rooms', 'keyword'));
+
+
     }
+
 }
