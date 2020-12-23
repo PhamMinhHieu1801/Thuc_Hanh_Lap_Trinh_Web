@@ -23,7 +23,17 @@
                     <a class="nav-link" href="{{ route('contact') }}">CONTACT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">LOGIN/REGISTER</a>
+                    @if(Auth::check())
+                    <div class="">
+                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> LOGOUT
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                    @elseif(!Auth::check())
+                        <a class="nav-link" href="{{ route('login') }}">LOGIN/REGISTER</a>
+                    @endif
                 </li>
             </ul>
         </div>
