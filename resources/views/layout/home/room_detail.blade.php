@@ -32,36 +32,61 @@
 </div>
 
 </div>
-<div class="container">
-<div class="room-features spacer">
+<div class="container mt-5">
+	<div class="book_button d-flex flex-row-reverse">
+		<a href="{{ route('room_detail') }}" class=" btn btn_default ">Check Details</a>
+	</div>
+ <div class="room-features spacer">
   <div class="row">
-    <div class="col-sm-12 col-md-5"> 
-    <p>Space in your house How to sell faster than your neighbors How to make a strategic use. To discourage you by telling. To discourage you by telling. I m going to outline 14 different ways that I ve found you. The real goal of any talk or speech. The real goal of any talk or speech. I m going to outline 14 different ways that I ve found you. The real goal of any talk or speech. I m going to outline 14 different ways that I ve found you. The real goal of any talk or speech. To discourage you by telling. To discourage you by telling. Space in your house How to sell faster than your neighbors How to make a strategic use. The real goal of any talk or speech.</p>
-    <p>By Learning Ways To Become Peaceful. One of the greatest barriers to making the sale is your prospect's natural. Don't stubbornly. Don't stubbornly. Don't stubbornly. -And Gain Power By Learning Ways To Become Peaceful. </p>
+    <div class="col-7"> 
+    <p>Cho description của phòng</p>
     </div>
-    <div class="col-sm-6 col-md-3 amenitites"> 
-    <h3>Amenitites</h3>    
-    <ul>
-      <li>One of the greatest barriers to making the sale is your prospect.</li>
-      <li>Principle to work to make more money while having more fun.</li>
-      <li>Unlucky people. Don't stubbornly.</li>
-      <li>Principle to work to make more money while having more fun.</li>
-      <li>Space in your house How to sell faster than your neighbors</li>
-    </ul>
-    
-
-    </div>  
-    <div class="col-sm-3 col-md-2">
-      <div class="size-price">Size<span>44 sq</span></div>
-    </div>
-    <div class="col-sm-3 col-md-2">
-      <div class="size-price">Price<span>$200.00</span></div>
-    </div>
-  </div>
+		<div class="hotel-information col-5 mt-3">
+			<h4 class=""> Information</h4>
+			<table class="table">
+				<tr>
+					<th>Type: Phòng đơn </th>
+				</tr>
+				<tr>
+					<th>Bed: 1 giường</th>
+				</tr>
+					<tr> <th>Bath: có phòng tắm</th></tr>
+				   
+				<tr>  <th>TV: Có TV</th></tr>   
+				<tr> <th>Phone: 0978880651</th></tr>   
+				<tr>  <th>Wardobe: 1</th></tr>  
+				</tr>
+			   
+			</table>
+		</div>
+  </div> 
 </div>
-                     
+<div class="row justify-content-center">
+  <div class="col-12">
+      <div class="card">
+          <div class="card-body">     
+              <h4> Comments</h4>
+              <div class="display-comment" style="margin-left:40px;" >
+                  <strong>Linh Chi</strong>
+                  <p>Phong tuyet</p>
+              </div>
 
-
+              <hr />
+              <h4>Add comment</h4>
+              <form method="post" action="">
+                  @csrf
+                  <div class="form-group">
+                      <textarea class="form-control" name=body></textarea>
+                      <input type=hidden name=post_id value="" />
+                  </div>
+                  <div class="form-group">
+                      <input type=submit class="btn btn-success" value="Add Comment" />
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>     
 </div>
 @include("layout.home.footer")
 
