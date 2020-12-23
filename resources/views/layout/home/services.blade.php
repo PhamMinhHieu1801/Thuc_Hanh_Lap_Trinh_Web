@@ -3,7 +3,7 @@
             <div class="card ">
               <img class="card-img-top" src="{{ URL::asset('storage/Image/8.jpg') }}" alt="Card image cap">
 
-                <div class="caption">Hotel1<a href="{{ route('list_room') }}" class="pull-right"><i class="fa fa-edit"></i></a></div>
+                <div class="caption">Hotel1<a href="#" class="pull-right"><i class="fa fa-edit"></i></a></div>
 
             </div>
             <div class="card">
@@ -22,7 +22,7 @@
             <div class="card ">
               <img class="card-img-top" src="{{ URL::asset('storage/Image/9.jpg') }}" alt="Card image cap">
 
-                <div class="caption">Hoetl4<a href="{{ route('list_room') }}" class="pull-right"><i class="fa fa-edit"></i></a></div>
+                <div class="caption">Hoetl4<a href="#" class="pull-right"><i class="fa fa-edit"></i></a></div>
 
             </div>
             <div class="card">

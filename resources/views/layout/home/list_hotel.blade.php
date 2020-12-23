@@ -22,66 +22,11 @@
                 <p class="card-text hotel-descript">
                 {{ $hotel->description}}
                 </p>
-                <a href="{{ route('list_room') }}" class=" btn btn_default ">Check Details</a>
+                <a href="{{ route('list_room', $hotel->id) }}" class=" btn btn_default ">Check Details</a>
             </div>
         </div>
     </div>
     @endforeach
-    {{-- <div class="col-sm-5 wowload fadeInUp card px-0">
-        <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/hotel/hotel2.jpg') }}"  style="width: 473px; height: 360px;"  class="card-img-top">
-            <div class="info card-body">
-                <h3 class="card-title">Linh Chi</h3>
-                <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
-                <a href="{{ route('list_room') }}" class=" btn btn_default ">Check Details</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-5 card px-0">
-        <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/hotel/hotel3.jpg') }}" style="width: 473px; height: 360px;"  class="card-img-top">
-            <div class="info card-body">
-                <h3 class="card-title">Thanh Tu</h3>
-                <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
-                <a href="{{ route('list_room') }}" class=" btn btn_default ">Check Details</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-5 card px-0">
-        <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/hotel/hotel4.jpg') }}"  style="width: 473px; height: 360px;"  class="card-img-top">
-            <div class="info card-body">
-                <h3 class="card-title">Yen Vy</h3>
-                <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
-                <a href="{{ route('list_room') }}" class=" btn btn_default ">Check Details</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-5 card px-0">
-        <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/hotel/hotel5.jpg') }}" style="width: 473px; height: 360px;"  class="card-img-top">
-            <div class="info card-body">
-                <h3 class="card-title">A</h3>
-                <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
-                <a href="{{ route('list_room') }}" class=" btn btn_default ">Check Details</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-5  card px-0">
-        <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/hotel/hotel6.jpg') }}" style="width: 473px; height: 360px;"  class="card-img-top">
-            <div class="info card-body">
-                <h3 class="card-title">Mama</h3>
-                <p class="card-text"> Missed lovers way one vanity wishes nay but. Use shy seemed within twenty wished old few regret passed. Absolute one hastened mrs any sensible</p>
-                <a href="{{ route('list_room') }}" class=" btn btn_default ">Check Details</a>
-            </div>
-        </div>
-    </div> --}}
-
 <!--
                      <div class="text-center">
                      <ul class="pagination">

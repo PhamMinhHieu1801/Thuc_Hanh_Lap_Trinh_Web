@@ -80,7 +80,7 @@
                       <input type=hidden name=post_id value="" />
                   </div>
                   <div class="form-group">
-                      <input type=submit class="btn btn-success" value="Add Comment" />
+                      <input type=submit class="btn btn_default" value="Add Comment" />
                   </div>
               </form>
           </div>
