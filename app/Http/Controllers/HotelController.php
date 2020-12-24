@@ -26,19 +26,16 @@ class HotelController extends Controller
     public function show($id)
     {
         $hotelDetail = Hotel::findOrFail($id);
-        $rooms = $hotelDetail->rooms();
+        $rooms = Room::where('hotel_id',$id)->get();
         return view('layout.home.list_room', compact('hotelDetail', 'rooms'));
     }
 
     public function searchRoomDetail(Request $request, $id)
     {
-        $keyword = $request->search;
+        $keyword = $request->room_search;
         $hotelDetail = Hotel::find($id);
-        $rooms = $hotelDetail->rooms()
-            ->where('name', 'like', '%' . $keyword . '%');
+        $rooms = Room::where('hotel_id',$id)->where('name', 'like', '%' . $keyword . '%')->get();
         return view('layout.home.list_room', compact('hotelDetail', 'rooms', 'keyword'));
-
-
     }
 
 }

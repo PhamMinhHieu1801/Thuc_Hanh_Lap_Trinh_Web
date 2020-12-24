@@ -39,7 +39,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Home') }}</a>
+                                <a class="nav-link" href="/">HOME</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
@@ -73,6 +73,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+        @include("layout.home.footer")
     </div>
 </body>
 </html>
