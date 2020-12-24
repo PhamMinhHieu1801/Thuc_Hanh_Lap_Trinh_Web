@@ -45,3 +45,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/login', 'HomeController@getLogin')->name('login');
 Route::post('login', 'HomeController@postLogin');
 Auth::routes();
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::get('/', 'Admin\AdminController@index')->name('index');
+    Route::resource('users', 'Admin\UserController');
+    Route::resource('hotels', 'Admin\HotelController');
+    Route::resource('rooms', 'Admin\RoomController');
+});
