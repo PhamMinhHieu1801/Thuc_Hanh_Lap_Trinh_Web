@@ -6,6 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Hotel;
+use App\Models\FeedBack;
+use App\Models\BookingHistory;
 
 class Room extends Model
 {
@@ -30,5 +32,10 @@ class Room extends Model
     {
         $hotel =  $this->hotels();
         return $hotel;
+    }
+
+    public function booking_historys()
+    {
+        return $this->hasMany(BookingHistory::class,'room_id');
     }
 }

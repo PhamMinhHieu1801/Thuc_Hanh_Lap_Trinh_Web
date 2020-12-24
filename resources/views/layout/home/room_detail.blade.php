@@ -6,7 +6,7 @@
 
 <div class="container d-flex flex-column align-items-sm-center ">
 
-<h1 class="title">Tên Room</h1>
+<h1 class="title">{{ $roomDetail->name }}</h1>
 
 <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -34,29 +34,28 @@
 </div>
 <div class="container mt-5">
 	<div class="book_button d-flex flex-row-reverse">
-		<a href="{{ route('room_detail') }}" class=" btn btn_default ">Check Details</a>
+		<a href="{{ route('room_detail', $roomDetail->id) }}" class=" btn btn_default ">Check Details</a>
 	</div>
  <div class="room-features spacer">
   <div class="row">
     <div class="col-7"> 
-    <p>Cho description của phòng</p>
+    <p>{{ $roomDetail->description}}</p>
     </div>
 		<div class="hotel-information col-5 mt-3">
 			<h4 class=""> Information</h4>
 			<table class="table">
 				<tr>
-					<th>Type: Phòng đơn </th>
+					<th>Type: {{ $roomDetail->type }} </th>
 				</tr>
 				<tr>
-					<th>Bed: 1 giường</th>
+					<th>Bed: {{ $roomDetail->bed }} giường</th>
 				</tr>
-					<tr> <th>Bath: có phòng tắm</th></tr>
+					<tr> <th>Bath: {{ $roomDetail->bath }} phòng tắm</th></tr>
 				   
-				<tr>  <th>TV: Có TV</th></tr>   
-				<tr> <th>Phone: 0978880651</th></tr>   
-				<tr>  <th>Wardobe: 1</th></tr>  
+				<tr>  <th>TV: {{ $roomDetail->tv }}</th></tr>   
+				<tr> <th>Phone: {{ $roomDetail->phone }}</th></tr>   
+				<tr>  <th>Wardobe: {{ $roomDetail->wardobe }}</th></tr>  
 				</tr>
-			   
 			</table>
 		</div>
   </div> 
@@ -66,18 +65,19 @@
       <div class="card">
           <div class="card-body">     
               <h4> Comments</h4>
-              <div class="display-comment" style="margin-left:40px;" >
-                  <strong>Linh Chi</strong>
-                  <p>Phong tuyet</p>
-              </div>
-
+              @foreach($comments as $comment)
+                <div class="display-comment" style="margin-left:40px;" >
+                  <strong>{{ $comment->users->name }}</strong>
+                  <p>{{ $comment->description }}</p>
+                </div>
+              @endforeach
               <hr />
               <h4>Add comment</h4>
-              <form method="post" action="">
+              <form method="post" action="{{ route('feedback.store', $roomDetail->id) }}">
                   @csrf
                   <div class="form-group">
-                      <textarea class="form-control" name=body></textarea>
-                      <input type=hidden name=post_id value="" />
+                      <textarea class="form-control" name="content"></textarea>
+                      <input type=hidden name=room_id value="{{ $roomDetail->id }}" />
                   </div>
                   <div class="form-group">
                       <input type=submit class="btn btn_default" value="Add Comment" />
