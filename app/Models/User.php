@@ -6,6 +6,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\BookingHistory;
+use App\Models\FeedBack;
 
 class User extends Authenticatable
 {
@@ -37,4 +39,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function booking_historys()
+    {
+        return $this->hasMany(BookingHistory::class,'user_id');
+    }
+
+    public function feed_backs()
+    {
+        return $this->hasMany(FeedBack::class,'user_id');
+    }
 }
