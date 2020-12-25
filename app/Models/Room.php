@@ -43,8 +43,5 @@ class Room extends Model
     {
         return $this->booking_historys()->where('user_id', Auth::id())->exists();
     }
-    public function getRoomBookedDestroyAttribute()
-    {
-        return $this->booking_historys()->where('user_id', Auth::id())->delete();
-    }
+   
 }

@@ -60,7 +60,7 @@
        <form action="{{ route('users_booking.destroy',$roomDetail->id)}}" method="GET" class="delete-form">
         @csrf
         @method('DELETE')
-           <button class="btn btn-primary" onclick="return confirm('Leave Course?');">Destroy Booking</i></button>
+           <button class="btn btn-primary" onclick="return confirm('Destroy Booking Room?');">Destroy Booking</i></button>
        </form>
 
 @endif
@@ -130,5 +130,4 @@
 </div>     
 </div>
 @include("layout.home.footer")
-
 @endsection

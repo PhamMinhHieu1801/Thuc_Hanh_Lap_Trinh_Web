@@ -55,4 +55,4 @@ Route::delete('room/feedback/delete/{id}', 'FeedBackController@destroyFeedBack')
 Route::post('room/feedback/update/{id}', 'FeedBackController@updateReview')->name('feedback.update');
 // booking and unbook
 Route::post('/user-booking/{id}', 'RoomController@store')->name('users_booking.store');
- Route::get('/user-booking/{id}', 'BookingHistoryController@destroy')->name('users_booking.destroy');
+ Route::get('/user-booking/{id}', 'RoomController@destroy')->name('users_booking.destroy');

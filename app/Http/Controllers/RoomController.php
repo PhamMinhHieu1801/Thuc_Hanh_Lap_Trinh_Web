@@ -46,8 +46,17 @@ class RoomController extends Controller
 
     public function destroy($id)
     {
-        $roomDetail = Room::find($id);
-        $roomDetail->booking_historys()->detach(Auth::id());
+        $roomDetail = Room::findOrFail($id);
+        $bookeds = $roomDetail->booking_historys;
+        // dd($bookeds);
+        foreach($bookeds as $booked)
+        {
+            if($booked->user_id==Auth::user()->id)
+            {
+                $booked->delete();
+                break;
+            }
+        }
         return redirect()->back();
     }
 
