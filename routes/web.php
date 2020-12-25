@@ -25,6 +25,7 @@ Route::get('/contact', function(){
     return view('layout/home/contact');
 })->name('contact');
 
+// Route::get('/adminhotel', 'Admin\HotelController@index')->name('admin.list_hotel');
 
 // xem list hotel
 Route::get('/hotel', 'HotelController@index')->name('list_hotel');
@@ -36,8 +37,6 @@ Route::get('/search-room-detail/{id}', 'HotelController@searchRoomDetail')->name
  Route::get('/hotel/room_detail', function(){
     return view('layout/home/room_detail');
  })->name('room_detail');
-
-//Route::get('/hotel/room_detail', 'HotelController@showRoom')->name('room_detail');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
