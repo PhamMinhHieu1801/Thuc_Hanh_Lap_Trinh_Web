@@ -29,6 +29,16 @@ class RoomController extends Controller
     public function store(Request $request, $id)
     {
         $roomDetail = Room::findOrFail($id);
+        $bookeds = $roomDetail->booking_historys;
+        foreach($bookeds as $booked)
+        {
+           
+            if(strtotime($booked->check_out) > strtotime($request->date_in))
+            {
+                $request->session()->flash('status', 'Phòng đã được đặt, vui lòng chọn ngày khác');
+                return redirect()->back();
+            }
+        }
         BookingHistory::create([
             "room_id" => $id,
             "name" => $request->name,
@@ -40,7 +50,7 @@ class RoomController extends Controller
             "check_out" => $request->date_out, 
             "user_id" => Auth::user()->id,
         ]);
-       // $roomDetail->booking_historys()->attach(Auth::id());
+        $request->session()->flash('status', 'Đăng kí phòng thành công!');
        return redirect()->back();
     }
 
@@ -48,7 +58,6 @@ class RoomController extends Controller
     {
         $roomDetail = Room::findOrFail($id);
         $bookeds = $roomDetail->booking_historys;
-        // dd($bookeds);
         foreach($bookeds as $booked)
         {
             if($booked->user_id==Auth::user()->id)
@@ -59,5 +68,4 @@ class RoomController extends Controller
         }
         return redirect()->back();
     }
-
 }
