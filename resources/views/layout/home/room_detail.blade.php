@@ -67,12 +67,24 @@
               <h4> Comments</h4>
               @foreach($comments as $comment)
                 <div class="display-comment" style="margin-left:40px;" >
-                  <strong>{{ $comment->users->name }}</strong>
-                  <p>{{ $comment->description }}</p>
+                  <strong>{{ $comment->user->name }}</strong>
+                  <p>{{ $comment->description }} {{$comment->id}}</p>
                 </div>
+                {{-- Delete --}}
+                @if (($comment->user_id) == Auth::id())
+                  <div class="d-flex align-items-center">  
+                    <form method="POST" action="{{ route('feedback.destroy',  $comment->id) }}" class="delete-form">
+                      @csrf
+                      @method('DELETE')
+                      <input type=submit class="" value="Delete" />
+                    </form>
+                  </div>
+                @endif
               @endforeach
               <hr />
+              {{-- @if (($comment->) == Auth::id()) --}}
               <h4>Add comment</h4>
+
               <form method="post" action="{{ route('feedback.store', $roomDetail->id) }}">
                   @csrf
                   <div class="form-group">
@@ -83,6 +95,7 @@
                       <input type=submit class="btn btn_default" value="Add Comment" />
                   </div>
               </form>
+              {{-- @endif --}}
           </div>
       </div>
   </div>

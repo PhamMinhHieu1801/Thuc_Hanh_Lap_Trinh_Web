@@ -44,5 +44,5 @@ Route::post('login', 'HomeController@postLogin');
 Auth::routes();
 //FeedBack
 Route::post('room/feedback/store/{id}', 'FeedBackController@storeRoomFeedBack')->name('feedback.store');
-Route::delete('room/feedback/delete/{id}', 'FeedBackController@destroyReview')->name('feedback.destroy');
+Route::delete('room/feedback/delete/{id}', 'FeedBackController@destroyFeedBack')->name('feedback.destroy');
 Route::post('room/feedback/update/{id}', 'FeedBackController@updateReview')->name('feedback.update');

@@ -35,5 +35,4 @@ class BookingHistory extends Model
     {
         return $this->hasMany(FeedBack::class,'booking_id');
     }
-
 }

@@ -15,10 +15,12 @@ class FeedBackController extends Controller
     {
         $room = Room::findOrFail($request->room_id);
         $booked = BookingHistory::where('user_id',Auth::user()->id)->where('room_id',$room->id)->get();
+       
         foreach ($booked as $value){
             $booking_id = $value->id;
             break;
         }
+      
         FeedBack::create([
             "description" => $request->content,
             "booking_id" => $booking_id,
@@ -27,20 +29,18 @@ class FeedBackController extends Controller
         return redirect()->back();
     }
 
-    public function destroyReview($id)
+    public function destroyFeedBack($id)
     {
-        $review = Review::findOrFail($id);
-        $review->delete();
-        return response()->json(["review" => $review->id]);
+        $feedback = FeedBack::findOrFail($id);
+        $feedback->delete();
+        return redirect()->back();
     }
 
-    public function updateReview(Request $request, $id)
+    public function updateFeedBack(Request $request, $id)
     {
-        $review = Review::findOrFail($id);
-        $review->update([
-            "content" => $request->content,
-            "rate" => $request->rate,
-        ]);
-        return response()->json([$review]);
+        $feedback = FeedBack::findOrFail($id);
+        $data = $request->all();
+        $review->update($data);
+        return redirect()->back();
     }
 }

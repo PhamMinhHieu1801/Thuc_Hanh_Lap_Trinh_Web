@@ -22,12 +22,17 @@ class Feedback extends Model
         'id', 'user_id', 'booking_id', 'date', 'description', 'rating'
     ];
 
-    public function users()
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
     public function booking_historys()
     {
         return $this->belongsTo(BookingHistory::class,'booking_id');
+    }
+    public function user_name($id)
+    {
+        $user = User::findOrFail($id);
+        return $user;
     }
 }
