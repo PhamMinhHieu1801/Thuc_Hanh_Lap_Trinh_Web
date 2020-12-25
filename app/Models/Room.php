@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Hotel;
 use App\Models\FeedBack;
 use App\Models\BookingHistory;
+use Illuminate\Support\Facades\Auth;
 
 class Room extends Model
 {
@@ -38,4 +39,9 @@ class Room extends Model
     {
         return $this->hasMany(BookingHistory::class,'room_id');
     }
+    public function getRoomBookedAttribute()
+    {
+        return $this->booking_historys()->where('user_id', Auth::id())->exists();
+    }
+   
 }

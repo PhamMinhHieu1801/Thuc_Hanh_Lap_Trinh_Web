@@ -25,7 +25,7 @@ class BookingHistory extends Model
 
     public function rooms()
     {
-        return $this->belongsTo(Room::class, 'room_id');
+        return $this->belongsMany(Room::class, 'room_id');
     }
     public function users()
     {

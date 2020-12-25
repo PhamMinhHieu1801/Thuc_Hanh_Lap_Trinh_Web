@@ -32,16 +32,21 @@
 </div>
 
 </div>
-<div class="container mt-5">
-	<div class="book_button d-flex flex-row-reverse">
-		<a href="{{ route('room_detail', $roomDetail->id) }}" class=" btn btn_default ">Check Details</a>
-	</div>
+<div class="container mt-5 ">
  <div class="room-features spacer">
-  <div class="row">
-    <div class="col-7"> 
-    <p>{{ $roomDetail->description}}</p>
+  <div class="row d-flex flex-row">
+    <div class="col-5 mr-5"> 
+     @include("layout.home.booking_room")
+     @if (!empty($roomDetail->room_booked))
+       <form action="{{ route('users_booking.destroy',$roomDetail->id)}}" method="GET" class="delete-form">
+        @csrf
+        @method('DELETE')
+           <button class="btn btn-primary" onclick="return confirm('Destroy Booking Room?');">Destroy Booking</i></button>
+       </form>
+
+@endif
     </div>
-		<div class="hotel-information col-5 mt-3">
+		<div class="hotel-information col-6 mt-3">
 			<h4 class=""> Information</h4>
 			<table class="table">
 				<tr>
@@ -84,9 +89,7 @@
               
               @endforeach
               <hr />
-              <h4>Add comment</h4>
-              {{-- @if (($comment->user_id) == Auth::id())  --}}
-              
+              <h4>Add comment</h4> 
               @foreach($bookeds as $booked)
                   @if (($booked->user_id) == Auth::id()) 
                   <form method="post" action="{{ route('feedback.store', $roomDetail->id) }}">
@@ -102,12 +105,10 @@
                     @break
                   @endif
                 @endforeach
-              
           </div>
       </div>
   </div>
 </div>     
 </div>
 @include("layout.home.footer")
-
 @endsection
