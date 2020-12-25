@@ -21,6 +21,9 @@ class Feedback extends Model
     protected $fillable = [
         'id', 'user_id', 'booking_id', 'date', 'description', 'rating'
     ];
+    protected $dates = [
+        'deleted_at'
+    ];
 
     public function user()
     {
@@ -30,9 +33,11 @@ class Feedback extends Model
     {
         return $this->belongsTo(BookingHistory::class,'booking_id');
     }
-    public function user_name($id)
+
+    public function getUserNameAttribute($id)
     {
         $user = User::findOrFail($id);
-        return $user;
+        return $user->name;
     }
+ 
 }

@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\BookingHistory;
 use App\Models\Room;
 use App\Models\User;
+use App\Models\FeedBack;
 
 class BookingHistory extends Model
 {
@@ -34,5 +34,9 @@ class BookingHistory extends Model
     public function feed_backs()
     {
         return $this->hasMany(FeedBack::class,'booking_id');
+    }
+    public function getFeedBackAttribute()
+    {
+        return $this->feed_backs();
     }
 }

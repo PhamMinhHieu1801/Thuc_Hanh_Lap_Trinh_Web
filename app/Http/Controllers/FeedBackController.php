@@ -31,8 +31,8 @@ class FeedBackController extends Controller
 
     public function destroyFeedBack($id)
     {
-        $feedback = FeedBack::findOrFail($id);
-        $feedback->delete();
+         $feedback = FeedBack::findOrFail($id);
+         $feedback->delete();
         return redirect()->back();
     }
 

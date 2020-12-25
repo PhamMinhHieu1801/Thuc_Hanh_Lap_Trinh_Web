@@ -67,35 +67,42 @@
               <h4> Comments</h4>
               @foreach($comments as $comment)
                 <div class="display-comment" style="margin-left:40px;" >
-                  <strong>{{ $comment->user->name }}</strong>
-                  <p>{{ $comment->description }} {{$comment->id}}</p>
+                 
+                  <strong>{{ $comment->user->name }} </strong>
+                  <p>{{ $comment->description }}</p>
                 </div>
                 {{-- Delete --}}
-                @if (($comment->user_id) == Auth::id())
+                 @if (($comment->user_id) == Auth::id()) 
                   <div class="d-flex align-items-center">  
-                    <form method="POST" action="{{ route('feedback.destroy',  $comment->id) }}" class="delete-form">
+                    <form method="POST" action="{{ route('feedback.destroy',  $comment->id) }}" class="delete-form" >
                       @csrf
                       @method('DELETE')
-                      <input type=submit class="" value="Delete" />
+                   <button class="btn btn-default" value="Delete" onclick="return confirm('Delete This ?')">   <i class="fa fa-trash" aria-hidden="true"></i>
                     </form>
                   </div>
-                @endif
+                @endif 
+              
               @endforeach
               <hr />
-              {{-- @if (($comment->) == Auth::id()) --}}
               <h4>Add comment</h4>
-
-              <form method="post" action="{{ route('feedback.store', $roomDetail->id) }}">
-                  @csrf
-                  <div class="form-group">
-                      <textarea class="form-control" name="content"></textarea>
-                      <input type=hidden name=room_id value="{{ $roomDetail->id }}" />
-                  </div>
-                  <div class="form-group">
-                      <input type=submit class="btn btn_default" value="Add Comment" />
-                  </div>
-              </form>
-              {{-- @endif --}}
+              {{-- @if (($comment->user_id) == Auth::id())  --}}
+              
+              @foreach($bookeds as $booked)
+                  @if (($booked->user_id) == Auth::id()) 
+                  <form method="post" action="{{ route('feedback.store', $roomDetail->id) }}">
+                    @csrf
+                    <div class="form-group">
+                        <textarea class="form-control" name="content"></textarea>
+                        <input type=hidden name=room_id value="{{ $roomDetail->id }}" />
+                    </div>
+                    <div class="form-group">
+                        <input type=submit class="btn btn_default" value="Add Comment" />
+                    </div>
+                </form>
+                    @break
+                  @endif
+                @endforeach
+              
           </div>
       </div>
   </div>
