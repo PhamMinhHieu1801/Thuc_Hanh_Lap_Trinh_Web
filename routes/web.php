@@ -53,3 +53,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 Route::post('room/feedback/store/{id}', 'FeedBackController@storeRoomFeedBack')->name('feedback.store');
 Route::delete('room/feedback/delete/{id}', 'FeedBackController@destroyFeedBack')->name('feedback.destroy');
 Route::post('room/feedback/update/{id}', 'FeedBackController@updateReview')->name('feedback.update');
+// booking and unbook
+Route::post('/user-booking/{id}', 'RoomController@store')->name('users_booking.store');
+ Route::get('/user-booking/{id}', 'BookingHistoryController@destroy')->name('users_booking.destroy');

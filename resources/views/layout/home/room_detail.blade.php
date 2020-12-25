@@ -32,16 +32,40 @@
 </div>
 
 </div>
-<div class="container mt-5">
-	<div class="book_button d-flex flex-row-reverse">
-		<a href="{{ route('room_detail', $roomDetail->id) }}" class=" btn btn_default ">Check Details</a>
-	</div>
+<div class="container mt-5 ">
+	{{-- <div class="book_button d-flex flex-row-reverse">
+		<a href="{{ route('room_detail', $roomDetail->id) }}" class=" btn btn_default ">Booking</a>
+  </div> --}}
+  {{-- @if (empty($roomDetail->room_booked))
+  <form action="{{ route('users_booking', $roomDetail->id) }}" method="POST" class="text-center"> --}} 
+      {{-- @csrf
+      <input type="text" name="user_id" value="{{ Auth::id() }}" hidden>
+      <input type="text" name="room_id" value="{{ $roomDetail->id }}" hidden>
+      <a href="{{ route('users_booking', $roomDetail->id) }}"  value="Booking Room" class="btn btn-default" ></a>
+  </form>
+@endif
+{{-- @if (!empty($roomDetail->room_booked))
+<form action="{{ route('users_booking.destroy',  Auth::id()) }}" method="GET" class="delete-form">
+  @method('DELETE')
+  @csrf
+  <button class="btn take-leave" onclick="return confirm('Leave Course?');">Leave This Course</i></button>
+</form>
+
+@endif --}}
  <div class="room-features spacer">
-  <div class="row">
-    <div class="col-7"> 
-    <p>{{ $roomDetail->description}}</p>
+  <div class="row d-flex flex-row">
+    <div class="col-5 mr-5"> 
+     @include("layout.home.booking_room")
+     @if (!empty($roomDetail->room_booked))
+       <form action="{{ route('users_booking.destroy',$roomDetail->id)}}" method="GET" class="delete-form">
+        @csrf
+        @method('DELETE')
+           <button class="btn btn-primary" onclick="return confirm('Leave Course?');">Destroy Booking</i></button>
+       </form>
+
+@endif
     </div>
-		<div class="hotel-information col-5 mt-3">
+		<div class="hotel-information col-6 mt-3">
 			<h4 class=""> Information</h4>
 			<table class="table">
 				<tr>
@@ -84,9 +108,7 @@
               
               @endforeach
               <hr />
-              <h4>Add comment</h4>
-              {{-- @if (($comment->user_id) == Auth::id())  --}}
-              
+              <h4>Add comment</h4> 
               @foreach($bookeds as $booked)
                   @if (($booked->user_id) == Auth::id()) 
                   <form method="post" action="{{ route('feedback.store', $roomDetail->id) }}">
@@ -102,7 +124,6 @@
                     @break
                   @endif
                 @endforeach
-              
           </div>
       </div>
   </div>
