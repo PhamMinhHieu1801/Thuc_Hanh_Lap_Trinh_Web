@@ -54,12 +54,11 @@
             <div class="info card-body">
                 <h3 class="card-title">{{ $room->name }}</h3>
                 <p class="card-text"> {{ $room->description }}</p>
-                <a href="{{ route('room_detail') }}" class=" btn btn_default ">Check Details</a>
+                <a href="{{ route('room_detail', $room->id) }}" class=" btn btn_default ">Check Details</a>
             </div>
         </div>
     </div>
     @endforeach
-
 </div>
 </div>
 

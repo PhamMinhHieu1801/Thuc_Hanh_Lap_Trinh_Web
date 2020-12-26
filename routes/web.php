@@ -34,10 +34,8 @@ Route::get('/hotel', 'HotelController@index')->name('list_hotel');
 Route::get('/hotel/{id}','HotelController@show')->name('list_room');
 Route::get('/search-room-detail/{id}', 'HotelController@searchRoomDetail')->name('list_room.search');
 
-//Room deatil
- Route::get('/hotel/room_detail', function(){
-    return view('layout/home/room_detail');
- })->name('room_detail');
+//Room detail
+ Route::get('/hotel/room/{id}','RoomController@show')->name('room_detail');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -54,5 +52,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('rooms', 'Admin\RoomController');
 });
 
+
 Route::get('admin/hotel/{id}','Admin\HotelController@show')->name('admin.list_room');
 Route::post('admin/hotels/{hotel}', 'Admin\HotelController@update')->name('admin.hotels.update');
+
+  //FeedBack
+Route::post('room/feedback/store/{id}', 'FeedBackController@storeRoomFeedBack')->name('feedback.store');
+Route::delete('room/feedback/delete/{id}', 'FeedBackController@destroyFeedBack')->name('feedback.destroy');
+Route::post('room/feedback/update/{id}', 'FeedBackController@updateReview')->name('feedback.update');
+// booking and unbook
+Route::post('/user-booking/{id}', 'RoomController@store')->name('users_booking.store');
+ Route::get('/user-booking/{id}', 'RoomController@destroy')->name('users_booking.destroy');
+
