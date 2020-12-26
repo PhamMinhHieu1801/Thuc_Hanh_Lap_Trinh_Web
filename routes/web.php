@@ -25,6 +25,7 @@ Route::get('/contact', function(){
 
 // xem list hotel
 Route::get('/hotel', 'HotelController@index')->name('list_hotel');
+Route::get('/search-hotel-detail', 'HotelController@searchHotelDetail')->name('list_hotel.search');
 
 // list room cua 1 khach san
 Route::get('/hotel/{id}','HotelController@show')->name('list_room');
