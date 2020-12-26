@@ -29,6 +29,7 @@ Route::get('/contact', function(){
 
 // xem list hotel
 Route::get('/hotel', 'HotelController@index')->name('list_hotel');
+
 // list room cua 1 khach san
 Route::get('/hotel/{id}','HotelController@show')->name('list_room');
 Route::get('/search-room-detail/{id}', 'HotelController@searchRoomDetail')->name('list_room.search');
@@ -45,9 +46,13 @@ Route::get('/login', 'HomeController@getLogin')->name('login');
 Route::post('login', 'HomeController@postLogin');
 Auth::routes();
 
+//Admin
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', 'Admin\AdminController@index')->name('index');
     Route::resource('users', 'Admin\UserController');
     Route::resource('hotels', 'Admin\HotelController');
     Route::resource('rooms', 'Admin\RoomController');
 });
+
+Route::get('admin/hotel/{id}','Admin\HotelController@show')->name('admin.list_room');
+Route::post('admin/hotels/{hotel}', 'Admin\HotelController@update')->name('admin.hotels.update');

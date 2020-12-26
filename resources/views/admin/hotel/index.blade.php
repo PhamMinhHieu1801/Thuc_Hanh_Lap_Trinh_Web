@@ -21,10 +21,13 @@
             <td>{{$hotel->name}}</td>
             <td>{{$hotel->description}}</td>
             <td>
-                <a href="" class="btn btn-info">Detail</a>
+                {{-- {{dd($hotel->id)}} --}}
+                <a href=" {{route('admin.list_room', $hotel->id )}}" class="btn btn-info">Detail</a>
+
             </td>
             <td>
-                <a href="" class="btn btn-warning">Edit</a>
+
+                <a href="{{ route('admin.hotels.edit', [$hotel->id])}}" class="btn btn-warning">Edit</a>
             </td>
             <td>
                 <form action="{{ route('admin.hotels.destroy', $hotel->id)}}" method="post">

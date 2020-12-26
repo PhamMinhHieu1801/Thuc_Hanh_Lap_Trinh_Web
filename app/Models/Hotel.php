@@ -25,7 +25,7 @@ class Hotel extends Model
     {
         return $this->hasMany(Room::class,'hotel_id');
     }
-    
+
     public function getNumOfRoomAttribute()
     {
         return $this->rooms()->count();
@@ -35,6 +35,10 @@ class Hotel extends Model
     {
         $room = $this->rooms();
         return $room;
+    }
+
+    static public function getHotelById($id) {
+        return self::find($id);
     }
 
 }

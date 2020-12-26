@@ -21,7 +21,7 @@
       <img src="{{ URL::asset('storage/Image/room/10.jpg') }}"  width="1000px" height="500">
     </div>
   </div>
-  
+
   <!-- Left and right controls -->
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
@@ -38,7 +38,7 @@
 	</div>
  <div class="room-features spacer">
   <div class="row">
-    <div class="col-7"> 
+    <div class="col-7">
     <p>Cho description của phòng</p>
     </div>
 		<div class="hotel-information col-5 mt-3">
@@ -51,20 +51,20 @@
 					<th>Bed: 1 giường</th>
 				</tr>
 					<tr> <th>Bath: có phòng tắm</th></tr>
-				   
-				<tr>  <th>TV: Có TV</th></tr>   
-				<tr> <th>Phone: 0978880651</th></tr>   
-				<tr>  <th>Wardobe: 1</th></tr>  
+
+				<tr>  <th>TV: Có TV</th></tr>
+				<tr> <th>Phone: 0978880651</th></tr>
+				<tr>  <th>Wardobe: 1</th></tr>
 				</tr>
-			   
+
 			</table>
 		</div>
-  </div> 
+  </div>
 </div>
 <div class="row justify-content-center">
   <div class="col-12">
       <div class="card">
-          <div class="card-body">     
+          <div class="card-body">
               <h4> Comments</h4>
               <div class="display-comment" style="margin-left:40px;" >
                   <strong>Linh Chi</strong>
@@ -86,7 +86,7 @@
           </div>
       </div>
   </div>
-</div>     
+</div>
 </div>
 @include("layout.home.footer")
 
