@@ -9,6 +9,13 @@
 <h2 class="my-3"> List Hotel</h2>
 
 </div>
+<div class="search-container ">
+    <form method="get" action="{{ route('list_hotel.search') }}">
+       @csrf
+       <input type="text" name="hotel_search" placeholder="Search.." aria-label="search" @if (isset($keyword)) value="{{ $keyword }}" @endif>
+       <button type="submit"><i class="fa fa-search"></i></button>
+   </form>
+</div>
 <!-- form -->
 
 <div class="row d-flex justify-content-around">

@@ -70,6 +70,9 @@
     </div>
     @endforeach
 </div>
+<div class="d-flex justify-content-center">
+    {{ $rooms->links() }}
+</div>
 </div>
 
 @include("layout.home.footer")
