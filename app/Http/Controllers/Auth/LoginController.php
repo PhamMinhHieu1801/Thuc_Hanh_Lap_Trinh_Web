@@ -57,13 +57,9 @@ class LoginController extends Controller
         if ($this->attemptLogin($request)) {
             if (Auth::user()->role == User::ROLE['admin']) {
                 return redirect()->route('admin.index');
+            } else {
+                return redirect()->route('home');
             }
-
-            if (Auth::user()->role == User::ROLE['user']) {
-
-
-                    return redirect()->route('index');
-                }
 
             }
 
@@ -78,7 +74,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.

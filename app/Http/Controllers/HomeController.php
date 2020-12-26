@@ -25,10 +25,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-            $hotels = Hotel::orderBy('rating','DESC')->limit(3)->get(); 
-            $hotel1 = Hotel::orderBy('created_at','DESC')->limit(3)->get(); 
+            // $hotels = Hotel::orderBy('rating','DESC')->limit(3)->get();
+            // $hotel1 = Hotel::orderBy('created_at','DESC')->limit(3)->get();
+            // return view('index', compact('hotels','hotel1'));
+            return view('index');
+    }
+
+    public function show() {
+            $hotels = Hotel::orderBy('rating','DESC')->limit(3)->get();
+            $hotel1 = Hotel::orderBy('created_at','DESC')->limit(3)->get();
             return view('index', compact('hotels','hotel1'));
     }
+
 
     public function getLogin()
     {
