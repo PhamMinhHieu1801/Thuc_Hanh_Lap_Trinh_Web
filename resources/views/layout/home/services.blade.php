@@ -1,4 +1,7 @@
 <section class="container">
+  <div class = "d-flex justify-content-center mt-5">
+    <h2> BEST HOTELS</h2>
+  </div>
   <div class="d-flex row justify-content-around card-deck">
   @foreach ($hotels as $hotel)
             <div class=" card  mt-2 ml-1" style="width:300px; height:370px;" >
@@ -14,11 +17,12 @@
                     <i class="fa fa-edit"></i></a>
                 </div>
             </div>
-           
-         
           @endforeach
         </div>
-        <div class="d-flex row justify-content-around card-deck mt-5">
+        <div class = "d-flex justify-content-center mt-5">
+          <h2> NEW HOTELS</h2>
+        </div>
+        <div class="d-flex row justify-content-around card-deck mt-3">
           @foreach ($hotel1 as $hotel)
             <div class=" card  mt-2 ml-1" style="width:300px; height:400px;" >
               @if ($hotel->image==NULL)

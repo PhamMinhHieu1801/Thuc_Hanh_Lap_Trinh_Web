@@ -16,12 +16,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">INTRODUCTION</a>
                 </li>
+                @if(Auth::check())
                 <li class="nav-item">
-                    <a class="nav-link" href="#">GALLERY</a>
+                    <a class="nav-link" href="{{ route('edit_user') }}">EDIT USER</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('contact') }}">CONTACT</a>
-                </li>
+                @endif
                 <li class="nav-item">
                     @if(Auth::check())
 
