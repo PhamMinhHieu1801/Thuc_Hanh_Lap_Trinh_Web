@@ -18,7 +18,7 @@ class Hotel extends Model
      */
     protected $table = 'hotels';
     protected $fillable = [
-        'id', 'name', 'local', 'description', 'rating', 'breakfast', 'wifi', 'car_park'
+        'id', 'name', 'local', 'description', 'rating', 'breakfast', 'wifi', 'car_park','image'
     ];
 
     public function rooms()

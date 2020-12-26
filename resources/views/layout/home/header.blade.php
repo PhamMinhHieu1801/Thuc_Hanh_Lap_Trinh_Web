@@ -8,18 +8,22 @@
         <div class="col-xl-8 col-md-12 collapse navbar-collapse d-md-flex flex-md-nowrap justify-content-xl-around justify-content-center" id="collapsingNavbar">
             <ul class="nav navbar-nav menu-header">
                 <li class="nav-item">
-                    <a class="nav-link" href="/">HOME</a>
+                    <a class="nav-link" href="{{ route('index') }}">HOME</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('list_hotel') }}">LIST HOTEL</a>
                 </li>
                 {{-- <li class="nav-item">
                     <a class="nav-link" href="#">INTRODUCTION</a>
+<<<<<<< HEAD
                 </li> --}}
                 {{-- {{ dd(Auth:)}} --}}
+                @if(Auth::check())
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('contact') }}">CONTACT</a>
+                    <a class="nav-link" href="{{ route('edit_user') }}">EDIT USER</a>
+
                 </li>
+                @endif
                 <li class="nav-item">
                     @if(Auth::check())
 

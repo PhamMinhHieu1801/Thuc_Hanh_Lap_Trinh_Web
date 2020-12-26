@@ -15,7 +15,6 @@ class RoomController extends Controller
     public function show($id)
     {
         $roomDetail = Room::findOrFail($id);
-       
         $comments = FeedBack::join('booking_historys',  'feed_backs.booking_id', '=', 'booking_historys.id')
         ->join('users', 'booking_historys.user_id', '=', 'users.id')
         ->where('booking_historys.room_id', $id)

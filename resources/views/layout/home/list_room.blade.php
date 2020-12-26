@@ -9,7 +9,12 @@
 <div class="d-flex row my-3 pb-5">
     <div class="hotel-image col-8 d-flex flex-column align-items-sm-center">
         <h2 class="">  {{ $hotelDetail->name }}</h2>
-       <img src="{{ URL::asset('storage/Image/hotel/hotel1.jpg') }}" class="card-img-top img-fluid" style="width:100%" >
+        @if ($hotelDetail->image==NULL)
+            <img src="{{ URL::asset('storage/Image/hotel/hotel1.jpg') }}" class="card-img-top" style="width: 473px; height: 360px;" style="width:100%" >
+        @endif
+        @if ($hotelDetail->image!=NULL)
+            <img src="{{ asset ($hotelDetail->image) }}" class="card-img-top img-fluid" style="width:100%" >
+        @endif
     </div>
     <div class="hotel-information col-3 mt-3 ml-5">
         <h4> Information</h4>
@@ -50,7 +55,12 @@
     @foreach($rooms as $room)
     <div class="col-sm-3 card px-0 mr-2" style="width:100%">
         <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/room/8.jpg') }}" class="card-img-top img-fluid" style="width:100%" >
+            @if ($room->image==NULL)
+                <img src="{{ URL::asset('storage/Image/room/8.jpg') }}" class="card-img-top img-fluid" style="width:100%" >
+            @endif
+            @if ($room->image !=NULL)
+                <img src="{{ asset($room->image) }}" class="card-img-top img-fluid" style="width:100%" >
+            @endif
             <div class="info card-body">
                 <h3 class="card-title">{{ $room->name }}</h3>
                 <p class="card-text"> {{ $room->description }}</p>

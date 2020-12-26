@@ -13,4 +13,5 @@ class UserController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     Auth::logout();
+    
 }

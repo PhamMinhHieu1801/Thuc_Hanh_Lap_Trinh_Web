@@ -39,7 +39,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="/">HOME</a>
+                                <a class="nav-link" href="{{ route('index') }}">HOME</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">

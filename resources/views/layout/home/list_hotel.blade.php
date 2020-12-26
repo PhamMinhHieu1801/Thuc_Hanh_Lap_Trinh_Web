@@ -16,7 +16,12 @@
     @foreach($hotels as $hotel)
     <div class="col-sm-5 card px-0" style="width:100%">
         <div class="rooms">
-            <img src="{{ URL::asset('storage/Image/hotel/hotel1.jpg') }}" class="card-img-top" style="width: 473px; height: 360px;" style="width:100%" >
+            @if ($hotel->image==NULL)
+              <img src="{{ URL::asset('storage/Image/hotel/hotel1.jpg') }}" class="card-img-top" style="width: 473px; height: 360px;" style="width:100%" >
+              @endif
+              @if ($hotel->image!=NULL)
+            <img src="{{ asset ($hotel->image) }}" class="card-img-top" style="width: 473px; height: 360px;" style="width:100%" >
+            @endif
             <div class="info card-body">
                 <h3 class="card-title">{{ $hotel->name }}</h3>
                 <p class="card-text hotel-descript">

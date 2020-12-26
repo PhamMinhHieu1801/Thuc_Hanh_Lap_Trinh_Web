@@ -4,16 +4,16 @@
   <title></title>
 </head>
 <body>
-  <section class="reservation-information">
-    <div class="spacer reserve-info" id="information">
+  <section class="reservation-information mb-5">
+    <div class="spacer reserve-info mb-5" id="information">
       <div class="container">
         <div class="row">
-          <div class="col-sm-7 col-md-8">
+          <div class="col-sm-7 col-md-12">
             <div class="embed-responsive embed-responsive-16by9 wowload fadeInLeft">
               <iframe allowfullscreen class="embed-responsive-item" frameborder="0" height="400" src="//player.vimeo.com/video/55057393?title=0" width="100%"></iframe>
             </div>
           </div>
-          <div class="col-sm-5 col-md-4">
+          {{-- <div class="col-sm-5 col-md-4">
             <h3>Reservation</h3>
             <form class="wowload fadeInRight" role="form">
               <div class="form-group">
@@ -250,14 +250,14 @@
                     </select>
                   </div>
                 </div>
-              </div>
-              <div class="form-group">
+              </div> --}}
+              {{-- <div class="form-group">
                 <textarea class="form-control" placeholder="Message" rows="4"></textarea>
               </div><button class="btn btn-default">Submit</button>
             </form>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
   </section>
 </body>
