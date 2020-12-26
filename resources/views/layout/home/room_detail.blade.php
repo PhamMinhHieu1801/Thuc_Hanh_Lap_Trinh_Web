@@ -10,19 +10,14 @@
 
 <div id="demo" class="carousel slide" data-ride="carousel">
 
-<div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{{ URL::asset('storage/Image/room/8.jpg') }}"  width="1000px" height="500">
-    </div>
-    <div class="carousel-item">
-      <img src="{{ URL::asset('storage/Image/room/9.jpg') }}"  width="1000px" height="500">
-    </div>
-    <div class="carousel-item">
-      <img src="{{ URL::asset('storage/Image/room/10.jpg') }}"  width="1000px" height="500">
-    </div>
+<div class="image">   
+  @if ($roomDetail->image==NULL)
+    <img src="{{ URL::asset('storage/Image/room/8.jpg') }}"  width="1000px" height="500">
+  @endif
+  @if ($roomDetail->image !=NULL)
+      <img src="{{ asset ($roomDetail->image) }}"  width="1000px" height="500">
+    @endif
   </div>
-  
-  <!-- Left and right controls -->
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
     <span class="carousel-control-prev-icon"></span>
   </a>

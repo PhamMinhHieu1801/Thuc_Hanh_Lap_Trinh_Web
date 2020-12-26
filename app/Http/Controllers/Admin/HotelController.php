@@ -5,6 +5,7 @@ use App\Models\Hotel;
 use App\Models\Room;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HotelController extends Controller
 {
@@ -40,17 +41,25 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $image = null;
-        // $hotels = Hotel::all();
-
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $file->move('storage/Image/hotel',  $extension);
+            $filename = 'storage/Image/hotel/'.$extension;      
+        }
+        else 
+        {
+            $filename = 'storage/Image/hotel/hotel1.png';
+        }
         Hotel::create([
+            
             'name' => $request->name,
             'local' => $request->local,
             'description' => $request->description,
             'breakfast' => $request->breakfast   ,
             'wifi' => $request->wifi,
-            'car_park' => $request->car_park
+            'car_park' => $request->car_park,
+            'image' => $filename
         ]);
 
         return redirect()->route('admin.hotels.index')->with('message', trans('message.create_success'));
