@@ -67,7 +67,7 @@ class HotelController extends Controller
         //
         $hotels = Hotel::findOrFail($id);
         $rooms = $hotels->rooms;
-        return view('admin.room.index', compact('rooms'));
+        return view('admin.room.index', compact('rooms', 'id'));
     }
 
     /**

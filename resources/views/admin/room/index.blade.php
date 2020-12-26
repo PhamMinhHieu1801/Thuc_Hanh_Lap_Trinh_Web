@@ -2,6 +2,9 @@
 @section('title', 'Hotel Detail')
 @section('contents')
 <div class="row d-flex justify-content-around">
+    <div class="ml-auto my-2">
+        <a href="{{ route('admin.rooms.create', $id)}}" class="btn btn-success mx-2 ">New Room</a>
+    </div>
     <table class="table table-dark">
         <thead>
           <tr>

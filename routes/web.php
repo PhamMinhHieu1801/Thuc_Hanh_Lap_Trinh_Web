@@ -60,7 +60,11 @@ Route::post('admin/hotels/{hotel}', 'Admin\HotelController@update')->name('admin
 Route::post('room/feedback/store/{id}', 'FeedBackController@storeRoomFeedBack')->name('feedback.store');
 Route::delete('room/feedback/delete/{id}', 'FeedBackController@destroyFeedBack')->name('feedback.destroy');
 Route::post('room/feedback/update/{id}', 'FeedBackController@updateReview')->name('feedback.update');
+
 // booking and unbook
 Route::post('/user-booking/{id}', 'RoomController@store')->name('users_booking.store');
- Route::get('/user-booking/{id}', 'RoomController@destroy')->name('users_booking.destroy');
+Route::get('/user-booking/{id}', 'RoomController@destroy')->name('users_booking.destroy');
 
+// Route::get('admin/hotel/newroom', 'Admin\RoomController@create')->name('admin.newroom');
+Route::get('admin/hotel/{id}/rooms/create','Admin\RoomController@create')->name('admin.rooms.create');
+// Route::post('admin/hotel/{id}/rooms/store', 'Admin\RoomController@store')->name('admin.rooms.store');

@@ -28,7 +28,8 @@ class RoomController extends Controller
      */
     public function create()
     {
-        //
+        // $hotels = Hotel::findOrFail($id);
+        return view('admin.room.add');
     }
 
     /**
@@ -37,9 +38,26 @@ class RoomController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,  $id)
     {
         //
+        $hotels = Hotel::findOrFail($id);
+        // $rooms =  Room::join('hotels', 'hotels->id', '=', 'rooms->hotel_id' ) -> where ('rooms->hotel_id', $id)->get();
+        Room::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'type' => $request->type,
+            'bed' => $request->bed,
+            'bath' => $request->bath,
+            'TV' => $request->TV,
+            'phone' =>$request->phone,
+            'wardobe' => $request->wadrobe
+        ]);
+
+        // $room = Room::create($request->all());
+
+        return redirect()->route('admin.list_room', compact('hotels') )->with('message', trans('message.create_success'));
     }
 
     /**
