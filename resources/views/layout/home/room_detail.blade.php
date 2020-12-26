@@ -102,4 +102,5 @@
   </div>
 </div>
 </div>
+</div>
 @include("layout.home.footer")
