@@ -56,18 +56,15 @@ class LoginController extends Controller
 
         if ($this->attemptLogin($request)) {
             if (Auth::user()->role == User::ROLE['admin']) {
-                // dd(Chi);
                 return redirect()->route('admin.index');
             }
 
             if (Auth::user()->role == User::ROLE['user']) {
-                if (($request->id)) {
-                    return redirect()->route('course.detail', $request->id);
-                } else {
-                    return redirect()->route('/home');
+               
+                    return redirect()->route('index');
                 }
             }
-        }
+        
 
         $this->incrementLoginAttempts($request);
 
