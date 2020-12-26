@@ -61,8 +61,6 @@ class LoginController extends Controller
 
             if (Auth::user()->role == User::ROLE['user']) {
 
-                    // return redirect()->route('/home');
-
 
                     return redirect()->route('index');
                 }

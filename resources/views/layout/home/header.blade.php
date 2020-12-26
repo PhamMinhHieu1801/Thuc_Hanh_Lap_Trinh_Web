@@ -13,11 +13,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('list_hotel') }}">LIST HOTEL</a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link" href="#">INTRODUCTION</a>
-<<<<<<< HEAD
-                </li> --}}
-                {{-- {{ dd(Auth:)}} --}}
                 @if(Auth::check())
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('edit_user') }}">EDIT USER</a>
