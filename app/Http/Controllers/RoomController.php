@@ -28,6 +28,11 @@ class RoomController extends Controller
     public function store(Request $request, $id)
     {
         $roomDetail = Room::findOrFail($id);
+        if (!Auth::check())
+        {
+            return redirect()->route('login');
+        }
+
         $bookeds = $roomDetail->booking_historys;
         foreach($bookeds as $booked)
         {
