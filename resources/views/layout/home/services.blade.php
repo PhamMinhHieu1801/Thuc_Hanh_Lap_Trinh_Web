@@ -1,4 +1,4 @@
-<section class="container">
+{{-- <section class="container">
   <div class = "d-flex justify-content-center mt-5">
     <h2> BEST HOTELS</h2>
   </div>
@@ -37,8 +37,8 @@
                     <i class="fa fa-edit"></i></a>
                 </div>
             </div>
-         
+
           @endforeach
           </div>
-      
-</section>
+
+</section> --}}
