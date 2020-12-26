@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
+Route::get('/', 'HomeController@index')->name('index');
 
 Route::get('/admin', function () {
     return view('admin.index');
@@ -35,8 +36,6 @@ Route::get('/search-room-detail/{id}', 'HotelController@searchRoomDetail')->name
 
 //Room detail
  Route::get('/hotel/room/{id}','RoomController@show')->name('room_detail');
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 // Login
 Route::get('/login', 'HomeController@getLogin')->name('login');

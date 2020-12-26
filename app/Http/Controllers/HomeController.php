@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 // use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\Hotel;
+
 
 class HomeController extends Controller
 {
@@ -23,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+            $hotels = Hotel::orderBy('rating','DESC')->limit(3)->get(); 
+            $hotel1 = Hotel::orderBy('created_at','DESC')->limit(3)->get(); 
+            return view('index', compact('hotels','hotel1'));
     }
 
     public function getLogin()
