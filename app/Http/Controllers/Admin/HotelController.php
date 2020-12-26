@@ -105,12 +105,7 @@ class HotelController extends Controller
             'wifi' => $request->wifi,
             'car_park' => $request->car_park
         ];
-
-        // $hotel::Hotel::findOrFail($id);
-        // dd(1);
         $hotel::getHotelById($id)->update($data);
-        // $hotels->update($request->all());
-        // $hotels->save();
         return redirect()->route('admin.hotels.index')->with('message', trans('message.edit_success'));
     }
 

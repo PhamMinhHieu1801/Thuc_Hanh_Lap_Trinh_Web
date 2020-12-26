@@ -1,5 +1,5 @@
 @extends('admin.index')
-@section('title', 'Add Hotel')
+@section('title', 'Add Rooms')
 @section('contents')
 <b><h1 class="text-center">New Rooms</h1></b>
 <div class="container">
@@ -42,6 +42,16 @@
             @if ($errors->has('price'))
                 <div class="alert alert-danger">
                     {{ $errors->first('price') }}
+                </div>
+            @endif
+        </div>
+
+        <div class="form-group">
+            <label>Room's Hotel</label><br>
+            <input class="form-control" name="hotel_id" value="{{$hotels->id}}"/>
+            @if ($errors->has('hotel_id'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('hotel_id') }}
                 </div>
             @endif
         </div>

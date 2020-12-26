@@ -13,12 +13,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('list_hotel') }}">LIST HOTEL</a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="#">INTRODUCTION</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">GALLERY</a>
-                </li>
+                </li> --}}
+                {{-- {{ dd(Auth:)}} --}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contact') }}">CONTACT</a>
                 </li>

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,4 +68,4 @@ Route::get('/user-booking/{id}', 'RoomController@destroy')->name('users_booking.
 
 // Route::get('admin/hotel/newroom', 'Admin\RoomController@create')->name('admin.newroom');
 Route::get('admin/hotel/{id}/rooms/create','Admin\RoomController@create')->name('admin.rooms.create');
-// Route::post('admin/hotel/{id}/rooms/store', 'Admin\RoomController@store')->name('admin.rooms.store');
+Route::post('admin/hotel/{id}', 'Admin\RoomController@store')->name('admin.rooms.store');
