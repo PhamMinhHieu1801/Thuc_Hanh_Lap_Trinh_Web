@@ -30,7 +30,7 @@ class HotelController extends Controller
     public function create()
     {
         //
-        return view('admin\hotel\add');
+        return view('admin.hotel.add');
     }
 
     /**
@@ -51,6 +51,7 @@ class HotelController extends Controller
         {
             $filename = 'storage/Image/hotel/hotel1.png';
         }
+      
         Hotel::create([
             
             'name' => $request->name,
@@ -74,9 +75,9 @@ class HotelController extends Controller
     public function show($id)
     {
         //
-        $hotelDetail = Hotel::findOrFail($id);
-        $rooms = Room::where('hotel_id',$id)->get();
-        return view('layout.home.list_room', compact('hotelDetail', 'rooms'));
+        $hotels = Hotel::findOrFail($id);
+        $rooms = $hotels->rooms;
+        return view('admin.room.index', compact('rooms', 'id'));
     }
 
     /**
@@ -88,6 +89,11 @@ class HotelController extends Controller
     public function edit($id)
     {
         //
+        $hotels = Hotel::findOrFail($id);
+        // return view('admin.hotel.edit', ['hotels' => $hotels]);
+
+        return view('admin.hotel.edit', compact('hotels'));
+
     }
 
     /**
@@ -99,7 +105,23 @@ class HotelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $hotels = Hotel::findOrFail($id);
+        $hotel= new Hotel();
+        $data = [
+            'name' => $request->name,
+            'local' => $request->local,
+            'description' => $request->description,
+            'breakfast' => $request->breakfast,
+            'wifi' => $request->wifi,
+            'car_park' => $request->car_park
+        ];
+
+        // $hotel::Hotel::findOrFail($id);
+        // dd(1);
+        $hotel::getHotelById($id)->update($data);
+        // $hotels->update($request->all());
+        // $hotels->save();
+        return redirect()->route('admin.hotels.index')->with('message', trans('message.edit_success'));
     }
 
     /**

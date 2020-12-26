@@ -30,6 +30,7 @@ Route::get('/contact', function(){
 
 // xem list hotel
 Route::get('/hotel', 'HotelController@index')->name('list_hotel');
+
 // list room cua 1 khach san
 Route::get('/hotel/{id}','HotelController@show')->name('list_room');
 Route::get('/search-room-detail/{id}', 'HotelController@searchRoomDetail')->name('list_room.search');
@@ -41,6 +42,7 @@ Route::get('/search-room-detail/{id}', 'HotelController@searchRoomDetail')->name
 Route::get('/login', 'HomeController@getLogin')->name('login');
 Route::post('login', 'HomeController@postLogin');
 Auth::routes();
+
 //Admin
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', 'Admin\AdminController@index')->name('index');
@@ -48,10 +50,20 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('hotels', 'Admin\HotelController');
     Route::resource('rooms', 'Admin\RoomController');
 });
+
+
+Route::get('admin/hotel/{id}','Admin\HotelController@show')->name('admin.list_room');
+Route::post('admin/hotels/{hotel}', 'Admin\HotelController@update')->name('admin.hotels.update');
+
   //FeedBack
 Route::post('room/feedback/store/{id}', 'FeedBackController@storeRoomFeedBack')->name('feedback.store');
 Route::delete('room/feedback/delete/{id}', 'FeedBackController@destroyFeedBack')->name('feedback.destroy');
 Route::post('room/feedback/update/{id}', 'FeedBackController@updateReview')->name('feedback.update');
+
 // booking and unbook
 Route::post('/user-booking/{id}', 'RoomController@store')->name('users_booking.store');
- Route::get('/user-booking/{id}', 'RoomController@destroy')->name('users_booking.destroy');
+Route::get('/user-booking/{id}', 'RoomController@destroy')->name('users_booking.destroy');
+
+// Route::get('admin/hotel/newroom', 'Admin\RoomController@create')->name('admin.newroom');
+Route::get('admin/hotel/{id}/rooms/create','Admin\RoomController@create')->name('admin.rooms.create');
+// Route::post('admin/hotel/{id}/rooms/store', 'Admin\RoomController@store')->name('admin.rooms.store');
