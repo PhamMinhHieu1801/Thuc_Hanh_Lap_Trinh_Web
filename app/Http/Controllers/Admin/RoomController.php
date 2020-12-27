@@ -68,6 +68,9 @@ class RoomController extends Controller
     public function show($id)
     {
         //
+        $hotelDetail = Hotel::findOrFail($id);
+        $rooms = Room::where('hotel_id',$id)->paginate(4);
+        return view('admin.hotel.list_room', compact('hotelDetail', 'rooms'));
     }
 
     /**
@@ -76,9 +79,14 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $room_id)
     {
-        //
+        // dd($room_id);
+        //  $hotels = Hotel::findOrFail($hotel);
+        $rooms = Room::findOrFail($room_id);
+        return view('admin.room.edit', compact('rooms'));
+
+        // return view('admin.room.edit', compact('hotels'));
     }
 
     /**
@@ -91,6 +99,28 @@ class RoomController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $rooms = new Room();
+        $data = [
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'hotel_id' => $request->hotel_id,
+            'type' => $request->type,
+            'bed' => $request->bed,
+            'bath' => $request->bath,
+            'TV'  => $request->TV,
+            'phone' => $request->phone,
+            'wardobe'  => $request->wardope
+        ];
+        // $rooms::getRoomById($id)->name= $request->name;
+
+        //  $rooms::getRoomById($id)->save();
+
+        $rooms->getRoomById($id)->update($data);
+        // dd($id);
+        $rooms->getRoomById($id)->save();
+        // dd($rooms->getRoomById($id));
+        return redirect()->route('admin.hotels.index')->with('message', trans('message.edit_success'));
     }
 
     /**
@@ -102,5 +132,7 @@ class RoomController extends Controller
     public function destroy($id)
     {
         //
+        Room::findOrFail($id)->delete();
+        return redirect()->route('admin.hotels.index')->with('message', trans('message.delete_success'));
     }
 }

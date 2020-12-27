@@ -45,15 +45,15 @@ class HotelController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalName();
             $file->move('storage/Image/hotel',  $extension);
-            $filename = 'storage/Image/hotel/'.$extension;      
+            $filename = 'storage/Image/hotel/'.$extension;
         }
-        else 
+        else
         {
             $filename = 'storage/Image/hotel/hotel1.png';
         }
-      
+
         Hotel::create([
-            
+
             'name' => $request->name,
             'local' => $request->local,
             'description' => $request->description,
