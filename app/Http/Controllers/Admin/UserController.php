@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+//use App\Http\Controllers\Admin\Hash;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -73,7 +76,29 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user= Auth::user();
+        $data = [
+            
+            'name' => $request->name,
+            'password' => Hash::make($request->password),
+            'phone' => $request->phone,
+        ];
+        Auth::user()->update($data);
+
+        if($request->hasFile('avatar')) {
+            $file = $request->file('avatar');
+            $extension = $file->getClientOriginalName();
+            $file->move('storage/Image/user',  $extension);
+            $filename = 'storage/Image/user/'.$extension;  
+            $user->avatar = $filename;
+            $user->save();  
+        }
+        if ($request->birthday!=NULL)
+        {
+            $user->birthday = $request->birthday;
+            $user->save(); 
+        }
+        return redirect()->route('edit_user');
     }
 
     /**

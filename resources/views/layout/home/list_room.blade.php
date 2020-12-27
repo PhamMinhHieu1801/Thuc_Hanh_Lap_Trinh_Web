@@ -17,19 +17,30 @@
         @endif
     </div>
     <div class="hotel-information col-3 mt-3 ml-5">
-        <h4> Information</h4>
-        <table class="table">
+        <h3 style="margin-left: 45px;"> Information</h3>
+        <table class="table" style="color:rgba(0,0,0,.5);">
             <tr>
                 <th>Description: {{ $hotelDetail->description}} </th>
             </tr>
             <tr>
                 <th>Local: {{ $hotelDetail->local }}</th>
             </tr>
-                <tr> <th>Wifi: Yes</th></tr>
+                <tr> <th>Wifi: 
+                    @if ( $hotelDetail->wifi == 1 ) Yes @endif
+                    @if ( $hotelDetail->wifi == 0 ) No @endif
+                    </th>
+                </tr>
 
-            <tr>  <th>Car-park: Yes</th></tr>
-            <tr> <th>Breakfast: Yes</th></tr>
-            <tr>  <th>Rating: {{ $hotelDetail->rating }}</th></tr>
+            <tr> 
+                 <th>Car-park: 
+                     @if ( $hotelDetail->car_park == 1 ) Yes @endif
+                    @if ( $hotelDetail->car_park == 0 ) No @endif
+                 </th>
+            </tr>
+            <tr> <th>Breakfast: 
+                @if ( $hotelDetail->breakfast == 1 ) Yes @endif
+                    @if ( $hotelDetail->breakfast == 0 ) No @endif
+                </th>
             </tr>
 
         </table>
@@ -38,7 +49,7 @@
 
 
 <!-- form -->
-<div class="list-room d-flex flex-coulmn align-items-sm-center row">
+<div class="list-room d-flex flex-coulmn align-items-sm-center row mb-5">
         <div class="d-flex justify-content-center col-9 ml-4 pl-4">
             <h3 class="ml-5 pl-5"> List Room</h3>
         </div>
@@ -70,9 +81,8 @@
     </div>
     @endforeach
 </div>
-<div class="d-flex justify-content-center">
+<div class="d-flex justify-content-center mb-5">
     {{ $rooms->links() }}
-</div>
 </div>
 
 @include("layout.home.footer")

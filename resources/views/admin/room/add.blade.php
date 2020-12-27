@@ -115,6 +115,9 @@
                 </div>
             @endif
         </div>
+        <div class="form-group">
+            <label for="avatar">Image</label> <input id="image" name="image" placeholder="image" type="file">
+        </div>
 
         <button type="submit" class="btn btn-success">Add</button>
         <a href="{{ route('admin.rooms.index') }}" class="btn btn-danger">Back</a>

@@ -53,7 +53,6 @@ class HotelController extends Controller
         }
       
         Hotel::create([
-            
             'name' => $request->name,
             'local' => $request->local,
             'description' => $request->description,
@@ -107,13 +106,20 @@ class HotelController extends Controller
     {
         // $hotels = Hotel::findOrFail($id);
         $hotel= new Hotel();
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $file->move('storage/Image/hotel',  $extension);
+            $filename = 'storage/Image/hotel/'.$extension;      
+        }
         $data = [
             'name' => $request->name,
             'local' => $request->local,
             'description' => $request->description,
             'breakfast' => $request->breakfast,
             'wifi' => $request->wifi,
-            'car_park' => $request->car_park
+            'car_park' => $request->car_park,
+            'image' => $filename
         ];
         $hotel::getHotelById($id)->update($data);
         return redirect()->route('admin.hotels.index')->with('message', trans('message.edit_success'));
