@@ -23,5 +23,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXhj2da6dV16T7twgO6aNoz9AoxgQp_CQ&libraries=places&language=vi&region=VI&callback=initMap"
         async defer></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+ src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+      defer></script>
 </body>
 </html>
