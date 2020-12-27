@@ -46,7 +46,7 @@
             @endif
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label>Room's Hotel</label><br>
             <input class="form-control" name="hotel_id" value="{{$hotels->id}}"/>
             @if ($errors->has('hotel_id'))
@@ -54,7 +54,7 @@
                     {{ $errors->first('hotel_id') }}
                 </div>
             @endif
-        </div>
+        </div> --}}
 
         <div class="form-group">
             <label>Room's Types</label><br>

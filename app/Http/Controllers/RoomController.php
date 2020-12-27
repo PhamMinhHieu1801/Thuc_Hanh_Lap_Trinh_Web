@@ -6,7 +6,7 @@ use App\Models\FeedBack;
 use App\Models\BookingHistory;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Requests\ValidateRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -25,7 +25,7 @@ class RoomController extends Controller
       
     }
 
-    public function store(Request $request, $id)
+    public function store( ValidateRequest $request, $id)
     {
         $roomDetail = Room::findOrFail($id);
         if (!Auth::check())

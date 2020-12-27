@@ -5,6 +5,8 @@ use App\Models\Room;
 use App\Http\Controllers\Controller;
 use App\Models\Hotel;
 use Illuminate\Http\Request;
+use App\Http\Requests\RoomRequest;
+
 
 class RoomController extends Controller
 {
@@ -38,7 +40,7 @@ class RoomController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoomRequest $request)
     {
         $rooms = Room::all();
         $list_rooms = Room::paginate(20);
@@ -116,6 +118,13 @@ class RoomController extends Controller
     {
         //
         $rooms = new Room();
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $file->move('storage/Image/room',  $extension);
+            $filename = 'storage/Image/room/'.$extension;      
+        }
+       
         $data = [
             'name' => $request->name,
             'description' => $request->description,
@@ -126,7 +135,8 @@ class RoomController extends Controller
             'bath' => $request->bath,
             'TV'  => $request->TV,
             'phone' => $request->phone,
-            'wardobe'  => $request->wardope
+            'wardobe'  => $request->wardope,
+            'image' => $filename,
         ];
         // $rooms::getRoomById($id)->name= $request->name;
 
