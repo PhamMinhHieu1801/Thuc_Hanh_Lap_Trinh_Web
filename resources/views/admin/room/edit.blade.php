@@ -37,10 +37,10 @@
             @endif
         </div>
 
-        <div class="form-group">
+        {{-- <div class="form-group">
             <label>Room's HotelId</label><br>
             <input class="form-control" name="hotel_id" value="{{ $rooms->hotel_id }}" />
-        </div>
+        </div> --}}
 
         <div class="form-group">
             <label>Room's Types</label><br>
@@ -102,6 +102,8 @@
             @endif
         </div>
 
+        <div class="form-group">
+            <label for="avatar">Image</label> <input id="image" name="image" placeholder="image" type="file">
         </div>
 
         <button type="submit" class="btn btn-success">Edit</button>

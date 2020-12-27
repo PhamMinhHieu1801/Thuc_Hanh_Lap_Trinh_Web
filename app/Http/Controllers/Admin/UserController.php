@@ -78,13 +78,16 @@ class UserController extends Controller
     {
         $user= Auth::user();
         $data = [
-            
-            'name' => $request->name,
             'password' => Hash::make($request->password),
             'phone' => $request->phone,
         ];
-        Auth::user()->update($data);
 
+        Auth::user()->update($data);
+        if ($request->name!=NULL)
+        {
+            $user->name = $request->name;
+            $user->save(); 
+        }
         if($request->hasFile('avatar')) {
             $file = $request->file('avatar');
             $extension = $file->getClientOriginalName();

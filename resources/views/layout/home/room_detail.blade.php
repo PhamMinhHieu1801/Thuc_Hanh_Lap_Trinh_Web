@@ -68,7 +68,14 @@
               @foreach($comments as $comment)
                 <div class="display-comment" style="margin-left:40px;" >
 
-                  <strong>{{ $comment->user->name }} </strong>
+                  <strong>
+                    @if($comment->user->name!=NULL)
+                    {{ $comment->user->name }} 
+                  @endif
+                  @if($comment->user->name==NULL)
+                  {{$comment->user->email}}
+                      @endif
+                </strong>
                   <p>{{ $comment->description }}</p>
                 </div>
                 {{-- Delete --}}
