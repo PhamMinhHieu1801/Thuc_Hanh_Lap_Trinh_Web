@@ -6,6 +6,8 @@ use App\Models\Room;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\HotelRequest;
+
 
 class HotelController extends Controller
 {
@@ -39,7 +41,7 @@ class HotelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HotelRequest $request)
     {
         if($request->hasFile('image')) {
             $file = $request->file('image');

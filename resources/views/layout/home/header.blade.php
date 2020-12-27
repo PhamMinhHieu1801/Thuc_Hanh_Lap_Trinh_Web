@@ -16,12 +16,15 @@
                 @if(Auth::check())
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('edit_user') }}">EDIT USER</a>
-
+                </li>
+                @endif
+                @if(Auth::user()->role == 1)
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.index') }}">ADMIN</a>
                 </li>
                 @endif
                 <li class="nav-item">
                     @if(Auth::check())
-
                         <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             LOGOUT
                         </a>
