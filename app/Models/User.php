@@ -57,4 +57,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(FeedBack::class,'user_id');
     }
+    static public function getUserById($id) {
+        return self::find($id);
+    }
 }

@@ -38,8 +38,11 @@
 
     </div>
 		<div class="hotel-information col-6 mt-3">
-			<h4 class=""> Information</h4>
-			<table class="table">
+			<h3 style="margin-left: 180px;" class="mb-3"> Information</h3>
+      <table class="table" style="color:rgba(0,0,0,.5);">
+        <tr>
+					<th>Description: {{ $roomDetail->description }} </th>
+				</tr>
 				<tr>
 					<th>Type: {{ $roomDetail->type }} </th>
 				</tr>
@@ -57,7 +60,7 @@
 			</table>
 		</div>
 </div>
-<div class="row justify-content-center">
+<div class="row justify-content-center mb-5 pb-5">
   <div class="col-12">
       <div class="card">
           <div class="card-body">

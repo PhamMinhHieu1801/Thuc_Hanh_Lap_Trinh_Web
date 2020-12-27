@@ -84,7 +84,9 @@
                 </div>
             @endif
         </div>
-
+        <div class="form-group">
+            <label for="avatar">Image</label> <input id="image" name="image" placeholder="image" type="file">
+        </div>
         <button type="submit" class="btn btn-success">Edit</button>
         <a href="{{ route('admin.hotels.index') }}" class="btn btn-danger">Back</a>
     </form>

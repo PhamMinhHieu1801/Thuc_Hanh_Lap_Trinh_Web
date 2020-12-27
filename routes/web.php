@@ -30,7 +30,7 @@ Route::get('/admin', function () {
     return view('admin.index');
 });
 
-Route::get('/contact', function(){
+Route::get('/edit_user', function(){
     return view('layout/home/edit_user');
 })->name('edit_user');
 
@@ -74,6 +74,9 @@ Route::get('/user-booking/{id}', 'RoomController@destroy')->name('users_booking.
 // Route::get('admin/hotel/newroom', 'Admin\RoomController@create')->name('admin.newroom');
 Route::get('admin/hotel/{id}/rooms/create','Admin\RoomController@create')->name('admin.rooms.create');
 Route::post('admin/hotel/{id}', 'Admin\RoomController@store')->name('admin.rooms.store');
+
+//Rout update User
+Route::post('/user_update/{id}','Admin\UserController@update')->name('user_update');
 
 
 //edit room

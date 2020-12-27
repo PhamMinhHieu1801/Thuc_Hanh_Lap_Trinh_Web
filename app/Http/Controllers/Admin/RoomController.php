@@ -40,7 +40,20 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        // $hotels = Hotel::finOrFail($id);
+        $rooms = Room::all();
+        $list_rooms = Room::paginate(20);
+        
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalName();
+            $file->move('storage/Image/room',  $extension);
+            $filename = 'storage/Image/room/'.$extension;      
+        }
+        else 
+        {
+            $filename = 'storage/Image/room/9.png';
+        }
+
         Room::create([
             'name' => $request->name,
             'description' => $request->description,
@@ -51,14 +64,17 @@ class RoomController extends Controller
             'bath' => $request->bath,
             'TV' => $request->TV,
             'phone' =>$request->phone,
-            'wardobe' => $request->wadrobe
+            'wardobe' => $request->wadrobe,
+            'image'=>$filename
         ]);
 
-        // $room = Room::create($request->all());
-
         return redirect()->back()->with('message', trans('message.create_success'));
+        // return view('admin.room.index', compact('rooms'))->with('rooms',$list_rooms);
     }
 
+    
+  
+    
     /**
      * Display the specified resource.
      *
