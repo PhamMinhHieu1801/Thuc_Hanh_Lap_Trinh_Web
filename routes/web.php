@@ -74,5 +74,11 @@ Route::get('/user-booking/{id}', 'RoomController@destroy')->name('users_booking.
 // Route::get('admin/hotel/newroom', 'Admin\RoomController@create')->name('admin.newroom');
 Route::get('admin/hotel/{id}/rooms/create','Admin\RoomController@create')->name('admin.rooms.create');
 Route::post('admin/hotel/{id}', 'Admin\RoomController@store')->name('admin.rooms.store');
+
 //Rout update User
 Route::post('/user_update/{id}','Admin\UserController@update')->name('user_update');
+
+
+//edit room
+Route::get('admin/hotel/{hotel}/rooms/{id}/edit', 'Admin\RoomController@edit')->name('admin.room.edit');
+Route::post('admin/hotel/{hotel}/rooms/{room}/update', 'Admin\RoomController@update')->name('admin.rooms.update');

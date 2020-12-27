@@ -11,6 +11,7 @@
             <th scope="col">#</th>
             <th scope="col">Hotel's id</th>
             <th scope="col">Rooms Name</th>
+            <th scope="col">Description</th>
             <th scope="col">Price</th>
             <th scope="col">Action</th>
           </tr>
@@ -21,7 +22,11 @@
             <th scope="row">{{$room->id}}</th>
             <th>{{$room->hotel_id}}</th>
             <td>{{$room->name}}</td>
+            <td>{{$room->description}}</td>
             <td>{{$room->price}}</td>
+            <td>
+                <a href="{{ route('admin.room.edit', [$room->hotel_id, $room->id])}}" class="btn btn-warning">Edit</a>
+            </td>
             <td>
                 <form action="{{ route('admin.rooms.destroy', $room->id)}}" method="post">
                   @method('DELETE')

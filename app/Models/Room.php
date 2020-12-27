@@ -43,5 +43,8 @@ class Room extends Model
     {
         return $this->booking_historys()->where('user_id', Auth::id())->exists();
     }
-   
+
+    static public function getRoomById($id) {
+        return self::find($id);
+    }
 }
