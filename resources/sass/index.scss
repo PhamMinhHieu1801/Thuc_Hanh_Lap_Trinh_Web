@@ -127,6 +127,14 @@ footer a:hover {
     -webkit-box-orient: vertical;
 }
 
+.room-description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
 // .infor_user .image img{
 //     border-radius:50%;
 // -moz-border-radius:50%;

@@ -10,7 +10,7 @@
 
 <div id="demo" class="carousel slide" data-ride="carousel">
 
-<div class="image">   
+<div class="image">
   @if ($roomDetail->image==NULL)
     <img src="{{ URL::asset('storage/Image/room/8.jpg') }}"  width="1000px" height="500">
   @endif
@@ -19,13 +19,11 @@
     @endif
   </div>
 </div>
-
 </div>
-<div class="container mt-5 ">
- <div class="room-features spacer">
-
+<div class="container mt-5 mr-5">
+ <div class="room-features ">
   <div class="row d-flex flex-row">
-    <div class="col-5 mr-5">
+    <div class="col-4">
      @include("layout.home.booking_room")
      @if (!empty($roomDetail->room_booked))
        <form action="{{ route('users_booking.destroy',$roomDetail->id)}}" method="GET" class="delete-form">
@@ -34,7 +32,7 @@
            <button class="btn btn-primary" onclick="return confirm('Destroy Booking Room?');">Destroy Booking</i></button>
        </form>
 
-@endif
+    @endif
 
     </div>
 		<div class="hotel-information col-6 mt-3">
@@ -58,7 +56,8 @@
             <tr>  <th>Wardobe: {{ $roomDetail->wardobe }}</th></tr>
             </tr>
 			</table>
-		</div>
+        </div>
+    </div>
 </div>
 <div class="row justify-content-center mb-5 pb-5">
   <div class="col-12">
@@ -70,7 +69,7 @@
 
                   <strong>
                     @if($comment->user->name!=NULL)
-                    {{ $comment->user->name }} 
+                    {{ $comment->user->name }}
                   @endif
                   @if($comment->user->name==NULL)
                   {{$comment->user->email}}
@@ -112,5 +111,5 @@
   </div>
 </div>
 </div>
-</div>
+
 @include("layout.home.footer")

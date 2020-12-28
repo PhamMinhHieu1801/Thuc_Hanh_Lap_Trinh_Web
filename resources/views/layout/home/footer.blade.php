@@ -10,11 +10,10 @@
                  <div class="col-sm-3">
                     <h4>Quick Links</h4>
                     <ul class="list-unstyled">
-                        <li><a href="rooms-tariff.php">Rooms & Tariff</a></li>
-                        <li><a href="introduction.php">Introduction</a></li>
-                        <li><a href="gallery.php">Gallery</a></li>
-                        <li><a href="tour.php">Tour Packages</a></li>
-                        <li><a href="contact.php">Contact</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ route('list_hotel') }}">ListHotel</a></li>
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
                     </ul>
                 </div>
                  <div class="col-sm-4 subscribe">
