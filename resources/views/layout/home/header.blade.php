@@ -16,14 +16,6 @@
                 @if(Auth::check())
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('edit_user') }}">EDIT USER</a>
-<<<<<<< HEAD
-=======
-                </li>
-                @endif
-                @if(Auth::user()->role == 1)
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.index') }}">ADMIN</a>
->>>>>>> cd08ccbeb089580438bb09505e5f3adead969313
                 </li>
                 @if (Auth::user()->role == 1) {
                     <li class="nav-item">
