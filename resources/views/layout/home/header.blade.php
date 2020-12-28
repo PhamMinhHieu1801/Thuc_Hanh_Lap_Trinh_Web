@@ -1,27 +1,43 @@
 <section class="header">
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="" href="index.php"><img src="{{ URL::asset('storage/Image/logo.png') }}" alt="holiday crown"></a>
-      </div>
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container-fluid d-flex flex-xl-nowrap flex-md-wrap">
+        <div class="col-xl-4 col-md-12 col-6 d-md-flex justify-content-md-center justify-content-center">
+            <div class="img-header"><img alt="" src="{{ URL::asset('storage/Image/logo.png') }}">
+            </div>
+        </div>
+        <div class="col-xl-8 col-md-12 collapse navbar-collapse d-md-flex flex-md-nowrap justify-content-xl-around justify-content-center" id="collapsingNavbar">
+            <ul class="nav navbar-nav menu-header">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/') }}">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('list_hotel') }}">LIST HOTEL</a>
+                </li>
+                @if(Auth::check())
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('edit_user') }}">EDIT USER</a>
+                </li>
+                @endif
+                @if(Auth::user()->role == 1)
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.index') }}">ADMIN</a>
+                </li>
+                @endif
+                <li class="nav-item">
+                    @if(Auth::check())
+                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            LOGOUT
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><a href="index.php" class="text">Home </a></li>
-          <li><a href="rooms-tariff.php" class="text">Rooms & Tariff</a></li>
-          <li><a href="introduction.php" class="text">Introduction</a></li>
-          <li><a href="gallery.php" class="text">Gallery</a></li>
-          <li><a href="contact.php" class="text">Contact</a></li>
-        </ul>
-      </div><!-- Wnavbar-collapse -->
-    </div><!-- container-fluid -->
-  </nav>
+                    @elseif(!Auth::check())
+                        <a class="nav-link" href="{{ route('login') }}">LOGIN/REGISTER</a>
+                    @endif
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 </section>

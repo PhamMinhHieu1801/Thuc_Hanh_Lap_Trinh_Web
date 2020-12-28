@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Room;
 
 class Hotel extends Model
 {
@@ -15,7 +16,29 @@ class Hotel extends Model
      *
      * @var array
      */
+    protected $table = 'hotels';
     protected $fillable = [
-        'id', 'name', 'local', 'description', 'rating', 'breakfast', 'wifi', 'car_park'
+        'id', 'name', 'local', 'description', 'rating', 'breakfast', 'wifi', 'car_park','image'
     ];
+
+    public function rooms()
+    {
+        return $this->hasMany(Room::class,'hotel_id');
+    }
+
+    public function getNumOfRoomAttribute()
+    {
+        return $this->rooms()->count();
+    }
+
+    public function getRoomHotelAttribute()
+    {
+        $room = $this->rooms();
+        return $room;
+    }
+
+    static public function getHotelById($id) {
+        return self::find($id);
+    }
+
 }

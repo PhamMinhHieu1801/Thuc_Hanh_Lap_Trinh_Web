@@ -5,12 +5,28 @@ body {
     line-height: 15px;
     color: #73726C;
 }
+.spacer{padding:1em 0; }
+.btn-default{background:#bfa145;box-shadow: none !important;color: #fff;}
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active{box-shadow: none !important;background:#756534;color: #fff;outline: none !important;}
+
+h1,h2,h3,h4,h5,h6{font-family:'Old Standard TT', serif;line-height: 1em;margin: 0;}
+h1{font-size: 5em;}
+h1.title,h2{font-size: 2em;line-height: 3em;}
+h3{font-size: 1.5em; margin-bottom: 0.70em;}
+h4{font-size: 1.25em; margin-bottom: 0.75em;}
+p{margin-bottom: 1em;line-height: 1.5em;}
 
 .header {
     .navbar-default {
         margin-bottom: 0;
     }
 }
+
+.navbar{margin: 0;}
+.navbar-nav{margin:0 -15px;}
+.navbar-nav > li > a{font-size: 1em;line-height: 4.26em;padding: 10px 0 10px 30px;}
+.navbar-default{border:none;background: #eeeeee;}
+.navbar-brand{height: 83px;}
 
 .banner {
     margin-bottom: 50px;
@@ -25,6 +41,7 @@ body {
 }
 
 .reservation-information {
+    background-color: #fff;
     margin-bottom: 50px;
     .reserve-info {
         h3 {
@@ -46,18 +63,9 @@ body {
             }
         }
     }
-    // .carosel-control {
-    //     width: 100%;
-    //     background: none !important;
-    //     .fa {
-    //         position: absolute;
-    //         left: 0;
-    //         right: 0;
-    //         top: 50%;
-    //         margin-top: -10px;
-    //     }
-    // }
 }
+
+
 
 footer {
     margin-top: 50px;
@@ -84,7 +92,7 @@ footer {
         }
         .btn {
             padding-top: 4px;
-            padding-bottom: 4px;
+            padding-bottom: 0px;
             background-color: #fff;
         }
     }
@@ -101,6 +109,7 @@ footer a:hover {
     color: #fff;
 }
 
+
 .copyright {
     background-color: #252423;
     padding: 0.6em 0;
@@ -110,3 +119,16 @@ footer a:hover {
         color: #AEAEAC;
     }
 }
+
+.hotel-descript {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+// .infor_user .image img{
+//     border-radius:50%;
+// -moz-border-radius:50%;
+// -webkit-border-radius:50%;
+// }

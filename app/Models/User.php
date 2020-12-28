@@ -6,11 +6,17 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\BookingHistory;
+use App\Models\FeedBack;
 
 class User extends Authenticatable
 {
     use Notifiable;
 
+    const ROLE = [
+        'user' => 0,
+        'admin' => 1,
+    ];
     /**
      * The attributes that are mass assignable.
      *
@@ -37,4 +43,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role(){
+        return $this->role;
+    }
+
+    public function booking_historys()
+    {
+        return $this->hasMany(BookingHistory::class,'user_id');
+    }
+
+    public function feed_backs()
+    {
+        return $this->hasMany(FeedBack::class,'user_id');
+    }
+    static public function getUserById($id) {
+        return self::find($id);
+    }
 }
