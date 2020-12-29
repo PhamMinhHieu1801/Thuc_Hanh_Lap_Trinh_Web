@@ -40,6 +40,9 @@
       <table class="table" style="color:rgba(0,0,0,.5);">
         <tr>
 					<th>Description: {{ $roomDetail->description }} </th>
+                </tr>
+                <tr>
+					<th>Price: {{ $roomDetail->price }} $ </th>
 				</tr>
 				<tr>
 					<th>Type: {{ $roomDetail->type }} </th>
