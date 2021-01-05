@@ -1,5 +1,7 @@
 Môi trường : Xampp
+
 Khởi tạo database trong phpmyadmin
+
 Chạy chương trình :
 + Clone code: git clone https://github.com/PhamMinhHieu1801/Thuc_Hanh_Lap_Trinh_Web.git
 + Config môi trường: cp .env.example .env
