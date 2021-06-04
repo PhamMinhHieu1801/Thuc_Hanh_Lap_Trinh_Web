@@ -4,10 +4,10 @@ var address_infos = {};
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
-    center: { lat: 21.005603, lng: 105.8434525 },
-    streetViewControl: false,
-    mapTypeControl: false
+  zoom: 15,
+  center: { lat: 21.005603, lng: 105.8434525 },
+  streetViewControl: false,
+  mapTypeControl: false
   });
   
   placeMarker({ lat: 21.005603, lng: 105.8434525 });
